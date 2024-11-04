@@ -17,7 +17,7 @@ public class LoadingScreenSystem_MainScript : MonoBehaviour
     // При запуске инициализируем показатели времени на ролики и текст.
     private void Start()
     {
-        loadingScreenTextSystem.time = timeText;
+        loadingScreenTextSystem.SetTime(timeText);
     }
 
     // Получаем название сцены, делаем активным канвас загрузки, выводим

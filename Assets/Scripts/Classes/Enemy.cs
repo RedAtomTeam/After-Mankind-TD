@@ -10,7 +10,14 @@ public class Enemy : ScriptableObject
     public int healthPoints;
     public int damage;
     public float speed;
-    public List<string> issues;
+
+    public int defenseKinetic;
+    public int defenseThermal;
+    public int defenseEM;
+
+    public string description;
+
+    public Dictionary<string, int> issuesPercent;
     public int treat;
     public string imageName;
 }
