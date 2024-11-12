@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
+  m_Name: Bridge control
+  m_EditorClassIdentifier: 
+  nameRus: "\u041A\u043E\u043D\u0442\u0440\u043E\u043B\u044C \u043C\u043E\u0441\u0442\u043E\u0432"
+  nameEng: Bridge control
+  ID: 30
+  type: Pseudo
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 0}
+  openCost: 0
+  maxLevel: 10
+  levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 1064c248861350a4eb1345a91b1b00b9, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: f5231bcea77a41e4980a7208770a0ded, type: 2}

@@ -12,11 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
   m_Name: Basic laser weapon
   m_EditorClassIdentifier: 
-  name: Basic laser weapon
-  ID: 7
-  type: Pseudo
-  description: ---
-  moduleName: 
+  nameRus: "\u0411\u0430\u0437\u043E\u0432\u043E\u0435 \u043B\u0430\u0437\u0435\u0440\u043D\u043E\u0435
+    \u043E\u0440\u0443\u0436\u0438\u0435"
+  nameEng: Basic laser weapon
+  ID: 24
+  type: Weapon
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 11400000, guid: 1fa949a83b207864ba733f2d69716191, type: 2}
   openCost: 0
   maxLevel: 10
   levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 4ef5cfa045c37164fbd105645c4f373c, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: 110d85dd17267f848aa91395d075f4ca, type: 2}
+  - {fileID: 11400000, guid: 76b544478579f25458ba2ebfdb7fcca3, type: 2}

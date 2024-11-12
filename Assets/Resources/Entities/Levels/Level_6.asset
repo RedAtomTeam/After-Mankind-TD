@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5140dfe824be942a39e09e882c702c, type: 3}
   m_Name: Level_6
   m_EditorClassIdentifier: 
-  name: Level 6
+  nameRus: "\u0410\u044D\u0440\u043E\u0434\u0440\u043E\u043C"
+  nameEng: Aerodrome
   ID: 6
-  description: ---
+  descriptionRus: "\u041F\u0443\u043D\u043A\u0442 \u0437\u0430\u043F\u0443\u0441\u043A\u0430
+    \u0440\u0430\u0437\u043B\u0438\u0447\u043D\u043E\u0439 \u0432\u043E\u0437\u0434\u0443\u0448\u043D\u043E\u0439
+    \u0442\u0435\u0445\u043D\u0438\u043A\u0438. \u041A\u0430\u043A \u0432\u043E\u0435\u043D\u043D\u043E\u0439,
+    \u0442\u0430\u043A \u0438 \u0433\u0440\u0443\u0437\u043E\u0432\u043E\u0439"
+  descriptionEng: Launch point for various aircraft, both military and cargo
   imageName: Level 6 image
-  levels: []
+  levels:
+  - {fileID: 11400000, guid: a9c825fb58a0f5e4dbdaeb2d0a0cc2dd, type: 2}
+  - {fileID: 11400000, guid: d241b90d6d94d254fb4c69892628c3fd, type: 2}

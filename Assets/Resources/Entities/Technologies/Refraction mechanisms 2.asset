@@ -12,11 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
   m_Name: Refraction mechanisms 2
   m_EditorClassIdentifier: 
-  name: Refraction mechanisms 2
-  ID: 13
+  nameRus: "\u041C\u0435\u0445\u0430\u043D\u0438\u0437\u043C\u044B \u043F\u0440\u0438\u043B\u043E\u043C\u043B\u0435\u043D\u0438\u044F
+    2"
+  nameEng: Refraction mechanisms 2
+  ID: 81
   type: Pseudo
-  description: ---
-  moduleName: 
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 0}
   openCost: 0
   maxLevel: 10
   levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 94e5928b04e16794386d22071e070bba, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: 5f766183e2f9c6b4bb3e307502507187, type: 2}

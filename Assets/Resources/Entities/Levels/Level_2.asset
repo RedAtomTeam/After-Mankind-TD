@@ -12,8 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5140dfe824be942a39e09e882c702c, type: 3}
   m_Name: Level_2
   m_EditorClassIdentifier: 
-  name: Level 2
+  nameRus: "\u0421\u0442\u0430\u043D\u0446\u0438\u044F \u043A\u043E\u043D\u0441\u0435\u0440\u0432\u0430\u0446\u0438\u0438"
+  nameEng: Preservation station
   ID: 2
-  description: ---
+  descriptionRus: "\u041E\u0444\u0438\u0446\u0438\u0430\u043B\u044C\u043D\u043E -
+    \u043C\u0435\u0441\u0442\u043E \u0434\u043B\u044F \u0434\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0433\u043E
+    \u0445\u0440\u0430\u043D\u0435\u043D\u0438\u044F \u0442\u0435\u0445\u043D\u0438\u043A\u0438.
+    \u041F\u043E \u0444\u0430\u043A\u0442\u0443 - \u043A\u043B\u0430\u0434\u0431\u0438\u0449\u0435
+    \u0432\u043E\u0435\u043D\u043D\u044B\u0445 \u043C\u0430\u0448\u0438\u043D"
+  descriptionEng: Officially - a place for long-term storage of equipment. In fact
+    - a cemetery of military vehicles
   imageName: Level 2 image
-  levels: []
+  levels:
+  - {fileID: 11400000, guid: fb399b815f4091248aa2b9ffea9be7ab, type: 2}
+  - {fileID: 11400000, guid: 539a2a9b778121f46bdc2fe9502eb92a, type: 2}
+  - {fileID: 11400000, guid: b9d02b86f0ea2354b99e445c5850acd1, type: 2}

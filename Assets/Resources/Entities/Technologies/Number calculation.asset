@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
   m_Name: Number calculation
   m_EditorClassIdentifier: 
-  name: Number calculation
-  ID: 4
+  nameRus: "\u0420\u0430\u0441\u0441\u0447\u0451\u0442 \u0447\u0438\u0441\u043B\u0435\u043D\u043D\u043E\u0441\u0442\u0438"
+  nameEng: Number calculation
+  ID: 71
   type: Pseudo
-  description: ---
-  moduleName: 
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 0}
   openCost: 0
   maxLevel: 10
   levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: aaab31dc020342b4cb90ebc45eafd96b, type: 2}
+  nextTech: []

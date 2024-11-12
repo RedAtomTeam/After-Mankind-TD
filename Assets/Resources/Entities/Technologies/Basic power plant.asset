@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
+  m_Name: Basic power plant
+  m_EditorClassIdentifier: 
+  nameRus: "\u0411\u0430\u0437\u043E\u0432\u0430\u044F \u044D\u043D\u0435\u0440\u0433\u043E\u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430"
+  nameEng: Basic power plant
+  ID: 28
+  type: Power Plant
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 11400000, guid: 14fb32cb573e79a41ac090bb8a981022, type: 2}
+  openCost: 0
+  maxLevel: 10
+  levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 7ab6b9679f2be3e468f51b7e85552dc8, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: d21c4eb68027a4847b5faae128a42f1d, type: 2}

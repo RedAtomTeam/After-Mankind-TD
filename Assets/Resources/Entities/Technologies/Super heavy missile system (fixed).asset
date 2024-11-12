@@ -12,11 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
   m_Name: Super heavy missile system (fixed)
   m_EditorClassIdentifier: 
-  name: Heavy flamethrower system
-  ID: 24
-  type: Pseudo
-  description: ---
-  moduleName: 
+  nameRus: "\u0421\u0432\u0435\u0440\u0445\u0442\u044F\u0436\u0451\u043B\u0430\u044F
+    \u0440\u0430\u043A\u0435\u0442\u043D\u0430\u044F \u0441\u0438\u0441\u0442\u0435\u043C\u0430"
+  nameEng: Super heavy missile system (fixed)
+  ID: 90
+  type: Weapon
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 11400000, guid: f9a4ea3692ff4e341885120652e0fe09, type: 2}
   openCost: 0
   maxLevel: 10
   levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 6b4d49af341d2d7469fca5f23f3d3362, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: b25a9e0e96f9c274596d612a20c99f73, type: 2}

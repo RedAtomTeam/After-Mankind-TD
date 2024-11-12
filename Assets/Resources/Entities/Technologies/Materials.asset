@@ -12,11 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
   m_Name: Materials
   m_EditorClassIdentifier: 
-  name: Materials
-  ID: 5
+  nameRus: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u044B"
+  nameEng: Materials
+  ID: 63
   type: Pseudo
-  description: ---
-  moduleName: 
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 0}
   openCost: 0
   maxLevel: 10
   levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 8ba414d713667c44a8f3e5cae53c10c3, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: 4ef5cfa045c37164fbd105645c4f373c, type: 2}
+  - {fileID: 11400000, guid: a994920a136d8034eb4e4b007e691921, type: 2}
+  - {fileID: 11400000, guid: 80735a0d88ec0bd45ac6e3e17d837256, type: 2}

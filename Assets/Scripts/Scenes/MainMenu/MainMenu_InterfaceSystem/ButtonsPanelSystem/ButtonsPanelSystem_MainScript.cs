@@ -19,7 +19,7 @@ public class ButtonsPanelSystem_MainScript : MonoBehaviour
     // Функция запуска новой игры.
     public void NewGameStart()
     {
-
+        LoadScene("GameMenu");
 
 
         //foreach (string techName in techNameList)

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
+  m_Name: Advanced Physics
+  m_EditorClassIdentifier: 
+  nameRus: "\u041F\u0440\u043E\u0434\u0432\u0438\u043D\u0443\u0442\u0430\u044F \u0444\u0438\u0437\u0438\u043A\u0430"
+  nameEng: Advanced Physics
+  ID: 11
+  type: Pseudo
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 0}
+  openCost: 0
+  maxLevel: 10
+  levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 04fe4e875ab046a41b8c227672c6ece4, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: 7ab6b9679f2be3e468f51b7e85552dc8, type: 2}
+  - {fileID: 11400000, guid: aea2be5ec4950954c8019a412c910c20, type: 2}

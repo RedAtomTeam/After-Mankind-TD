@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
+  m_Name: Base platform
+  m_EditorClassIdentifier: 
+  nameRus: "\u0411\u0430\u0437\u043E\u0432\u0430\u044F \u043F\u043B\u0430\u0442\u0444\u043E\u0440\u043C\u0430"
+  nameEng: Base platform
+  ID: 20
+  type: Platform
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 11400000, guid: 7ed0d9e20f7e675408134489720d70fe, type: 2}
+  openCost: 0
+  maxLevel: 10
+  levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 8ba414d713667c44a8f3e5cae53c10c3, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: 2b9bcc896a942e946b4bcb9cbbd1c3a7, type: 2}

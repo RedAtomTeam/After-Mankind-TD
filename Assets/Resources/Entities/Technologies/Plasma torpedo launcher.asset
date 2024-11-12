@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
   m_Name: Plasma torpedo launcher
   m_EditorClassIdentifier: 
-  name: Plasma torpedo launcher
-  ID: 26
-  type: Pseudo
-  description: ---
-  moduleName: 
+  nameRus: "\u041F\u043B\u0430\u0437\u043C\u0435\u043D\u043D\u0430\u044F \u0442\u043E\u0440\u043F\u0435\u0434\u043D\u0430\u044F
+    \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430"
+  nameEng: Plasma torpedo launcher
+  ID: 73
+  type: Weapon
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 11400000, guid: 90de36f91037e5f4b9158b1833618044, type: 2}
   openCost: 0
   maxLevel: 10
   levelUpCost: 0
-  prevTech: []
+  prevTech:
+  - {fileID: 11400000, guid: b25a9e0e96f9c274596d612a20c99f73, type: 2}
   nextTech: []

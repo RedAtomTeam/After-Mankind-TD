@@ -12,8 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5140dfe824be942a39e09e882c702c, type: 3}
   m_Name: Level_14
   m_EditorClassIdentifier: 
-  name: Level 14
+  nameRus: "\u0426\u0435\u043D\u0442\u0440 \u0440\u0430\u0434\u0438\u043E\u0440\u0430\u0437\u0432\u0435\u0434\u043A\u0438"
+  nameEng: Radio Intelligence Center
   ID: 14
-  description: ---
+  descriptionRus: "\u0411\u043E\u043B\u044C\u0448\u043E\u0439 \u043A\u043E\u043C\u043F\u043B\u0435\u043A\u0441,
+    \u043D\u0430\u043F\u0438\u0447\u043A\u0430\u043D\u043D\u044B\u0439 \u0440\u0430\u0434\u0438\u043E\u043B\u043E\u043A\u0430\u0446\u0438\u043E\u043D\u043D\u044B\u043C
+    \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u0435\u043C
+    \u0434\u043B\u044F \u0434\u0430\u043B\u044C\u043D\u0435\u0439 \u0440\u0430\u0437\u0432\u0435\u0434\u043A\u0438."
+  descriptionEng: A large complex, packed with radar equipment for long-range reconnaissance.
   imageName: Level 14 image
-  levels: []
+  levels:
+  - {fileID: 11400000, guid: df6ac661822eff646877e423682cdd5b, type: 2}
+  - {fileID: 11400000, guid: df67485d5b29a9344b9411d00d9fb1f7, type: 2}
+  - {fileID: 11400000, guid: 1b4656b13723a02479d0ad53b09f5210, type: 2}

@@ -20,6 +20,6 @@ MonoBehaviour:
   defenseKinetic: 100
   defenseThermal: 100
   defenseEM: 100
-  description: 3
+  description: '-'
   treat: 60
   imageName: Sentinel MK1

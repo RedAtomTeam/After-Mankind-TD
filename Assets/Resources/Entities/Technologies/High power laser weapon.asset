@@ -12,11 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
   m_Name: High power laser weapon
   m_EditorClassIdentifier: 
-  name: High power laser weapon
-  ID: 9
-  type: Pseudo
-  description: ---
-  moduleName: 
+  nameRus: "\u041B\u0430\u0437\u0435\u0440\u043D\u043E\u0435 \u043E\u0440\u0443\u0436\u0438\u0435
+    \u043F\u043E\u0432\u044B\u0448\u0435\u043D\u043D\u043E\u0439 \u043C\u043E\u0449\u043D\u043E\u0441\u0442\u0438"
+  nameEng: High power laser weapon
+  ID: 49
+  type: Weapon
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 11400000, guid: 757896e68d436b846939471216c01f4c, type: 2}
   openCost: 0
   maxLevel: 10
   levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 110d85dd17267f848aa91395d075f4ca, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: 52d1dd8ce1b194e46b2705c13d14a525, type: 2}

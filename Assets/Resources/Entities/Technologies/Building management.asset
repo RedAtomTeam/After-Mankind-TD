@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
+  m_Name: Building management
+  m_EditorClassIdentifier: 
+  nameRus: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0441\u0442\u0440\u043E\u0435\u043D\u0438\u044F\u043C\u0438"
+  nameEng: Building management
+  ID: 31
+  type: Pseudo
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 0}
+  openCost: 0
+  maxLevel: 10
+  levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 8ba414d713667c44a8f3e5cae53c10c3, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: a935c64ea66356e43964fb02eb1e102d, type: 2}
+  - {fileID: 11400000, guid: 5466ad52ebea1484982a6e03d0ee75fa, type: 2}
+  - {fileID: 11400000, guid: 99fe4ce1dd24fa64a83eafe377290550, type: 2}

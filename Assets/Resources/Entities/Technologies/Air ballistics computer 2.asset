@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
+  m_Name: Air ballistics computer 2
+  m_EditorClassIdentifier: 
+  nameRus: "\u0412\u043E\u0437\u0434\u0443\u0448\u043D\u044B\u0439 \u0431\u0430\u043B\u043B\u0438\u0441\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439
+    \u0432\u044B\u0447\u0438\u0441\u043B\u0438\u0442\u0435\u043B\u044C 2"
+  nameEng: Air ballistics computer 2
+  ID: 17
+  type: Ballistic Computer
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 11400000, guid: bb85085386a256549a8484a9984a18d5, type: 2}
+  openCost: 0
+  maxLevel: 10
+  levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: a80efeb9e1bc0244c861641da1a28a75, type: 2}
+  - {fileID: 11400000, guid: 76b544478579f25458ba2ebfdb7fcca3, type: 2}
+  nextTech: []

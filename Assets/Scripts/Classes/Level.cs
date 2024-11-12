@@ -5,9 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Level", menuName = "Entities/Level")]
 public class Level : ScriptableObject
 {
-    public string name;
+    public string nameRus;
+    public string nameEng;
     public int ID;
-    public string description;
+    public string descriptionRus;
+    public string descriptionEng;
     public string imageName;
     public List<Level> levels;
 }

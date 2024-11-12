@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
+  m_Name: Flight path
+  m_EditorClassIdentifier: 
+  nameRus: "\u0422\u0440\u0430\u0435\u043A\u0442\u043E\u0440\u0438\u044F \u043F\u043E\u043B\u0451\u0442\u0430"
+  nameEng: Flight path
+  ID: 42
+  type: Pseudo
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 0}
+  openCost: 0
+  maxLevel: 10
+  levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 5c699e70346bec840aee6df6c32253e5, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: 807b3d0886d2fd648a97137b41c45613, type: 2}
+  - {fileID: 11400000, guid: a80efeb9e1bc0244c861641da1a28a75, type: 2}

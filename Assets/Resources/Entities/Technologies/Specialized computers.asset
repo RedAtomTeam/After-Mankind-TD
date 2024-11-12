@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
+  m_Name: Specialized computers
+  m_EditorClassIdentifier: 
+  nameRus: "\u0421\u043F\u0435\u0446\u0438\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0435
+    \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u044B"
+  nameEng: Specialized computers
+  ID: 89
+  type: Pseudo
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 0}
+  openCost: 0
+  maxLevel: 10
+  levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 5c66ab95bd9e5a645b3f7b502c424806, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: 82f8cb2757b12234dbd58d320775ee89, type: 2}
+  - {fileID: 11400000, guid: 9632e1113f6f84d41a2c80d3cc72e056, type: 2}
+  - {fileID: 11400000, guid: 9c4c9df920487064db8085ab2898c1f8, type: 2}
+  - {fileID: 11400000, guid: 45477f7fc19dddc4aab0f367a06d46ae, type: 2}

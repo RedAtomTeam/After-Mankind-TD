@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
+  m_Name: Small corps 2
+  m_EditorClassIdentifier: 
+  nameRus: "\u041C\u0430\u043B\u044B\u0439 \u043A\u043E\u0440\u043F\u0443\u0441 2"
+  nameEng: Small corps 2
+  ID: 84
+  type: Corps
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 11400000, guid: 7600ccf786be04243a5d4b80cfe9eb8f, type: 2}
+  openCost: 0
+  maxLevel: 10
+  levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 04455d4bd5038af468c7713f15c06dc8, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: f6b1e116975abd047901481d36245fdf, type: 2}

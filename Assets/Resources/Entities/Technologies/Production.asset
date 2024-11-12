@@ -12,11 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
   m_Name: Production
   m_EditorClassIdentifier: 
-  name: ' Production'
-  ID: 1
+  nameRus: "\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u043E"
+  nameEng: Production
+  ID: 75
   type: Pseudo
-  description: ---
-  moduleName: 
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 0}
   openCost: 0
   maxLevel: 10
   levelUpCost: 0
+  prevTech: []
+  nextTech:
+  - {fileID: 11400000, guid: aaab31dc020342b4cb90ebc45eafd96b, type: 2}
+  - {fileID: 11400000, guid: 04fe4e875ab046a41b8c227672c6ece4, type: 2}
+  - {fileID: 11400000, guid: c4b840ca528e63f41bc8813e4e2c0b88, type: 2}
+  - {fileID: 11400000, guid: 1064c248861350a4eb1345a91b1b00b9, type: 2}

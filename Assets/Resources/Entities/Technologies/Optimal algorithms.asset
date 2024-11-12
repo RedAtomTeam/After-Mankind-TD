@@ -12,11 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
   m_Name: Optimal algorithms
   m_EditorClassIdentifier: 
-  name: Optimal algorithms
-  ID: 19
+  nameRus: "\u041E\u043F\u0442\u0438\u043C\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0435
+    \u0430\u043B\u0433\u043E\u0440\u0438\u0442\u043C\u044B"
+  nameEng: Optimal algorithms
+  ID: 72
   type: Pseudo
-  description: ---
-  moduleName: 
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 0}
   openCost: 0
   maxLevel: 10
   levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: b3c3b87bca622844a8ee24496fbea141, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: f02a64c50972edf4e9625b612ab952c4, type: 2}

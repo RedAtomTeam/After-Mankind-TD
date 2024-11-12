@@ -12,11 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
   m_Name: Advanced missile weapon
   m_EditorClassIdentifier: 
-  name: Advanced missile weapon
-  ID: 22
-  type: Pseudo
-  description: ---
-  moduleName: 
+  nameRus: "\u041F\u0440\u043E\u0434\u0432\u0438\u043D\u0443\u0442\u043E\u0435 \u0440\u0430\u043A\u0435\u0442\u043D\u043E\u0435
+    \u043E\u0440\u0443\u0436\u0438\u0435"
+  nameEng: Advanced missile weapon
+  ID: 10
+  type: Weapon
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 11400000, guid: 51ad84c0f0bc8ff4d87f7197ddcad301, type: 2}
   openCost: 0
   maxLevel: 10
   levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 110210b1e3e6c574aafea456d4f8fa4a, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: 6b4d49af341d2d7469fca5f23f3d3362, type: 2}

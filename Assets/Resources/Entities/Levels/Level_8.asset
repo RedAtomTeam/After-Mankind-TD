@@ -12,8 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5140dfe824be942a39e09e882c702c, type: 3}
   m_Name: Level_8
   m_EditorClassIdentifier: 
-  name: Level 8
+  nameRus: "\u0426\u0435\u043D\u0442\u0440 \u0441\u0432\u044F\u0437\u0438"
+  nameEng: Communication center
   ID: 8
-  description: ---
+  descriptionRus: "\u041F\u0443\u043D\u043A\u0442, \u043E\u0442\u0432\u0435\u0447\u0430\u044E\u0449\u0438\u0439
+    \u0437\u0430 \u043A\u043E\u043C\u043C\u0443\u043D\u0438\u043A\u0430\u0446\u0438\u044E
+    \u0440\u0430\u0439\u043E\u043D\u0430 \u0441 \u043E\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u043C
+    \u043A\u043E\u043C\u043F\u043B\u0435\u043A\u0441\u043E\u043C. \u0411\u0435\u0437
+    \u043A\u043E\u043D\u0442\u0440\u043E\u043B\u044F \u043D\u0430\u0434 \u043D\u0438\u043C
+    \u0441\u0432\u044F\u0437\u044C \u0441 \u043E\u0441\u0442\u0430\u043B\u044C\u043D\u044B\u043C
+    \u043C\u0438\u0440\u043E\u043C \u043D\u0435\u0432\u043E\u0437\u043C\u043E\u0436\u043D\u0430"
+  descriptionEng: The point responsible for the area's communication with the rest
+    of the complex. Without control over it, communication with the rest of the world
+    is impossible.
   imageName: Level 8 image
-  levels: []
+  levels:
+  - {fileID: 11400000, guid: d241b90d6d94d254fb4c69892628c3fd, type: 2}
+  - {fileID: 11400000, guid: 8f635d04166830b4aaec328330eee549, type: 2}
+  - {fileID: 11400000, guid: 1b4656b13723a02479d0ad53b09f5210, type: 2}

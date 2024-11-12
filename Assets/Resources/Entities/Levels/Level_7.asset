@@ -12,8 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5140dfe824be942a39e09e882c702c, type: 3}
   m_Name: Level_7
   m_EditorClassIdentifier: 
-  name: Level 7
+  nameRus: "\u0421\u0431\u043E\u0440\u043E\u0447\u043D\u044B\u0439 \u0446\u0435\u0445
+    \u0442\u044F\u0436\u0451\u043B\u043E\u0439 \u0431\u0440\u043E\u043D\u0435\u0442\u0435\u0445\u043D\u0438\u043A\u0438"
+  nameEng: Assembly shop for heavy armored vehicles
   ID: 7
-  description: ---
+  descriptionRus: "\u0411\u043E\u043B\u044C\u0448\u043E\u0435 \u0430\u0432\u0442\u043E\u043C\u0430\u0442\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u043E\u0435
+    \u043F\u0440\u0435\u0434\u043F\u0440\u0438\u044F\u0442\u0438\u0435 \u043F\u043E
+    \u0441\u0431\u043E\u0440\u043A\u0435 \u0441\u043B\u043E\u0436\u043D\u044B\u0445
+    \u0438 \u0442\u044F\u0436\u0451\u043B\u044B\u0445 \u0432\u043E\u0435\u043D\u043D\u044B\u0445
+    \u043C\u0430\u0448\u0438\u043D"
+  descriptionEng: A large automated plant for the assembly of complex and heavy military
+    vehicles
   imageName: Level 7 image
-  levels: []
+  levels:
+  - {fileID: 11400000, guid: 2df877ec5745dd745997e0429c4ac8b9, type: 2}
+  - {fileID: 11400000, guid: 35e696189ab800b44b40712897e16c29, type: 2}

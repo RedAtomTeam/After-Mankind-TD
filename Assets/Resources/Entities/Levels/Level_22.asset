@@ -12,8 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5140dfe824be942a39e09e882c702c, type: 3}
   m_Name: Level_22
   m_EditorClassIdentifier: 
-  name: Level 22
+  nameRus: "\u0420\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0438\u0442\u0435\u043B\u044C\u043D\u0430\u044F
+    \u0441\u0442\u0430\u043D\u0446\u0438\u044F"
+  nameEng: Distribution station
   ID: 22
-  description: ---
+  descriptionRus: "\u0421\u0442\u0430\u043D\u0446\u0438\u044F \u043F\u043E \u0440\u0430\u0441\u043F\u0440\u0435\u0434\u0435\u043B\u0435\u043D\u0438\u044E
+    \u043F\u0440\u0438\u0431\u044B\u0432\u0430\u044E\u0449\u0438\u0445 \u0433\u0440\u0443\u0437\u043E\u0432"
+  descriptionEng: Incoming cargo distribution station
   imageName: Level 22 image
-  levels: []
+  levels:
+  - {fileID: 11400000, guid: 81ae154354e5ed74b9b1279866197608, type: 2}
+  - {fileID: 11400000, guid: dab98db02e3b43344bdc2857add1605c, type: 2}

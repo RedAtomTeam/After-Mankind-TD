@@ -20,6 +20,6 @@ MonoBehaviour:
   defenseKinetic: 100
   defenseThermal: 100
   defenseEM: 100
-  description: 1
+  description: '-'
   treat: 50
   imageName: Object 712

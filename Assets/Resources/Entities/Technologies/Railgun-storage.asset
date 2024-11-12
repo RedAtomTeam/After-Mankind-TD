@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
+  m_Name: Railgun-storage
+  m_EditorClassIdentifier: 
+  nameRus: "\u0420\u0435\u043B\u044C\u0441\u043E\u0442\u0440\u043E\u043D-\u043D\u0430\u043A\u043E\u043F\u0438\u0442\u0435\u043B\u044C"
+  nameEng: Railgun-storage
+  ID: 79
+  type: Weapon
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 11400000, guid: 807459cc06cc84841bc62232fabd701e, type: 2}
+  openCost: 0
+  maxLevel: 10
+  levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: be5795e3c6e99b043b07b4cd216d454f, type: 2}
+  - {fileID: 11400000, guid: 3c94565d56d1b45409efae564c9692be, type: 2}
+  nextTech: []

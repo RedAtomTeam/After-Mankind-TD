@@ -12,11 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
   m_Name: Swarm Intelligence
   m_EditorClassIdentifier: 
-  name: Swarm Intelligence
-  ID: 17
+  nameRus: "\u0420\u043E\u0435\u0432\u043E\u0439 \u0438\u043D\u0442\u0435\u043B\u043B\u0435\u043A\u0442"
+  nameEng: Swarm Intelligence
+  ID: 93
   type: Pseudo
-  description: ---
-  moduleName: 
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 0}
   openCost: 0
   maxLevel: 10
   levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 110210b1e3e6c574aafea456d4f8fa4a, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: b3c3b87bca622844a8ee24496fbea141, type: 2}

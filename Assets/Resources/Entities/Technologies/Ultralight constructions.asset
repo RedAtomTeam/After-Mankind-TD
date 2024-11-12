@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4213e71b3554e2b4c89083b77999ba8c, type: 3}
+  m_Name: Ultralight constructions
+  m_EditorClassIdentifier: 
+  nameRus: "\u0421\u0432\u0435\u0440\u0445\u043B\u0451\u0433\u043A\u0438\u0435 \u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438"
+  nameEng: Ultralight constructions
+  ID: 96
+  type: Pseudo
+  descriptionRus: '-'
+  descriptionEng: '-'
+  module: {fileID: 0}
+  openCost: 0
+  maxLevel: 10
+  levelUpCost: 0
+  prevTech:
+  - {fileID: 11400000, guid: 4f856f4ae76f3e149b46c8769c4f3ac0, type: 2}
+  nextTech:
+  - {fileID: 11400000, guid: 8847fd89d28daee43864345880858bc8, type: 2}
+  - {fileID: 11400000, guid: 7cf9302e68af570458db83ada8e8f201, type: 2}

@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5140dfe824be942a39e09e882c702c, type: 3}
   m_Name: Level_23
   m_EditorClassIdentifier: 
-  name: Level 23
+  nameRus: "\u041F\u0440\u043E\u043C\u044B\u0448\u043B\u0435\u043D\u043D\u043E\u0435
+    \u0445\u0440\u0430\u043D\u0438\u043B\u0438\u0449\u0435"
+  nameEng: Industrial storage
   ID: 23
-  description: ---
+  descriptionRus: "\u0425\u0440\u0430\u043D\u0438\u043B\u0438\u0449\u0435 \u0440\u0430\u0441\u0445\u043E\u0434\u043D\u044B\u0445
+    \u043C\u0430\u0442\u0435\u0440\u0438\u0430\u043B\u043E\u0432 \u0438 \u0437\u0430\u043F\u0447\u0430\u0441\u0442\u0435\u0439
+    \u0434\u043B\u044F \u0442\u0435\u0445\u043D\u0438\u043A\u0438"
+  descriptionEng: Storage of consumables and spare parts for equipment
   imageName: Level 23 image
-  levels: []
+  levels:
+  - {fileID: 11400000, guid: 1b4656b13723a02479d0ad53b09f5210, type: 2}
+  - {fileID: 11400000, guid: 34eb57cbb054f4043ad6e9c973691c6a, type: 2}
