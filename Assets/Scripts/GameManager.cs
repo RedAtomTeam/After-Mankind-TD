@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
             technologiesData.Add(allTechnologiesEntities[i].ID, 0);
 
             playerGameData.technologies[i].ID = allTechnologiesEntities[i].ID;
+            playerGameData.technologies[i].level = 0;
             playerGameData.technologies[i].status = 0;
         }
     }
@@ -96,6 +97,7 @@ public class LevelData
 public class TechnologyData
 {
     public int ID;
+    public int level;
     public int status;
 }
 

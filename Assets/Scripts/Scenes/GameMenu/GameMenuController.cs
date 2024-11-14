@@ -52,6 +52,7 @@ public class GameMenuController : MonoBehaviour
     public void OpenMapTab()
     {
         cameraSystem.SetPositionOnStartPosition();
+        cameraSystem.ChangeSpriteRenderer();
         levelsMapSystem.OpenMapTab();
         CloseTechTreeTab();
     }
@@ -64,6 +65,7 @@ public class GameMenuController : MonoBehaviour
     public void OpenTechTreeTab()
     {
         cameraSystem.SetPositionOnStartPosition();
+        cameraSystem.ChangeSpriteRenderer();
         technologyTreeSystem.OpenTechTreeTab();
         CloseMapTab();
     }

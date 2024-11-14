@@ -10,7 +10,7 @@ public class GameMenuCameraSystem : MonoBehaviour
     private Vector3 dragOrigin;
 
     [SerializeField]
-    private SpriteRenderer mapRenderer;
+    public SpriteRenderer mapRenderer;
 
     [SerializeField]
     private SpriteRenderer worldMapTabRenderer;
@@ -24,6 +24,35 @@ public class GameMenuCameraSystem : MonoBehaviour
 
     public bool cameraIsOn = true;
 
+    public float defaultCameraSize;
+    public float maxCameraSize = 10f;
+    public float minCameraSize = 2f;
+
+    public float wheelSense;
+
+
+    public void ChangeSpriteRenderer()
+    {
+        if (mapRenderer == worldMapTabRenderer)
+        {
+            mapRenderer = technologiesTabRenderer;
+            //targetCanvas = techTab;
+        }
+        else
+        {
+            mapRenderer = worldMapTabRenderer;
+            //targetCanvas = levelMapTab;
+        }
+
+        cam.orthographicSize = defaultCameraSize;
+
+        mapMinX = mapRenderer.transform.position.x - mapRenderer.bounds.size.x / 2f;
+        mapMaxX = mapRenderer.transform.position.x + mapRenderer.bounds.size.x / 2f;
+
+        mapMinY = mapRenderer.transform.position.y - mapRenderer.bounds.size.y / 2f;
+        mapMaxY = mapRenderer.transform.position.y + mapRenderer.bounds.size.y / 2f;
+    }
+
     // При загрузке сцены рассчитываем координаты карты.
     private void Awake()
     {
@@ -34,11 +63,6 @@ public class GameMenuCameraSystem : MonoBehaviour
 
         mapMinY = mapRenderer.transform.position.y - mapRenderer.bounds.size.y / 2f;
         mapMaxY = mapRenderer.transform.position.y + mapRenderer.bounds.size.y / 2f;
-
-        print(mapMinX);
-        print(mapMaxX);
-        print(mapMinY);
-        print(mapMaxY);
     }
 
     public void SetPositionOnStartPosition()
@@ -49,6 +73,7 @@ public class GameMenuCameraSystem : MonoBehaviour
     // Функция отслеживание состояния мыши вызывается каждый кадр.
     void Update()
     {
+
         if (cameraIsOn)
         {
             PanCamera();
@@ -61,19 +86,50 @@ public class GameMenuCameraSystem : MonoBehaviour
         //print(cam.ScreenToWorldPoint(Input.mousePosition));
         //print(cam.ScreenToWorldPoint(new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 10)));
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(2))
         {
             dragOrigin = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100));
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(2))
         {
             Vector3 difference = dragOrigin - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100));
-            //print(dragOrigin);
-            //print(cam.ScreenToWorldPoint(Input.mousePosition));
-            print(difference);
             cam.transform.position = ClampCamera(cam.transform.position + difference);
-            //cam.transform.position = cam.transform.position + difference;
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") != 0)
+        {
+            float cameraSizeCoef = cam.orthographicSize - Input.GetAxis("Mouse ScrollWheel") * wheelSense;
+
+            if (cameraSizeCoef > maxCameraSize)
+            {
+                cameraSizeCoef = maxCameraSize;
+            }
+            if (cameraSizeCoef < minCameraSize)
+            {
+                cameraSizeCoef = minCameraSize;
+            }
+
+            cam.orthographicSize = cameraSizeCoef;
+
+
+            dragOrigin = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100));
+            Vector3 difference = dragOrigin - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100));
+            cam.transform.position = ClampCamera(cam.transform.position + difference);
+
+            //print(Input.GetAxis("Mouse ScrollWheel"));
+
+            //float zoomCoef = targetCanvas.GetComponent<RectTransform>().localScale.x + Input.GetAxis("Mouse ScrollWheel") * 0.1f;
+            //if (zoomCoef > maxZoom)
+            //{
+            //    zoomCoef = maxZoom;
+            //}
+            //if (zoomCoef < minZoom)
+            //{
+            //    zoomCoef = minZoom;
+            //}
+            //zoom = zoomCoef;
+            //targetCanvas.GetComponent<RectTransform>().localScale = new Vector3(zoomCoef, zoomCoef, zoomCoef);
         }
     }
 

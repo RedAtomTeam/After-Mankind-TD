@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GameMenuTechnologyInfoSystem : MonoBehaviour
 {
+    private GameManager gameManager;
+
     [SerializeField] private GameMenuInterfaceSystem interfaceSystem;
 
     [SerializeField] private TextMeshProUGUI techName;
@@ -37,16 +39,34 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI techDescryption;
     [SerializeField] private TextMeshProUGUI techCost;
 
+    [SerializeField] private Color activeColor;
+    [SerializeField] private Color passiveColor;
+
     [SerializeField] private GameObject obj;
 
     private Technology targetTech = null;
+
+    private void Awake()
+    {
+        gameManager = GameManager.Instance;
+    }
 
     public void LoadTechInfo(Technology tech)
     {
         targetTech = tech;
 
+        foreach (TechnologyData technology in gameManager.playerGameData.technologies) 
+        {
+            if (tech.ID == technology.ID)
+            {
+                techLevel.text = $"{technology.level}/{tech.maxLevel}";
+                break;
+            }
+        }
+
         if (tech.module != null)
         {
+            techName.text = tech.module.name;
             techValuePlatformMass.text = tech.module.PlatformMass.ToString();
             techValueCorpsMass.text = tech.module.CorpsMass.ToString();
             techValueHorizontalSpeed.text = tech.module.HorizontalSpeed.ToString();
@@ -58,9 +78,52 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
             techValueReload.text = tech.module.Reload.ToString();
             techValueTargetType.text = tech.module.TargetType.ToString();
             techValueGunCount.text = tech.module.GunCount.ToString();
+
+
+            techValuePlatformMass.color = tech.type == "Platform" ? activeColor : passiveColor;
+            techValueCorpsMass.color = tech.type == "Corps" ? activeColor : passiveColor;
+            techValueHorizontalSpeed.color = tech.type == "Platform" ? activeColor : passiveColor;
+            techValueVerticalSpeed.color = tech.type == "Platform" ? activeColor : passiveColor;
+            techValueEnergy.color = activeColor;
+            techValueRadius.color = tech.type == "Ballistic Computer" ? activeColor : passiveColor;
+            techValueDamage.color = tech.type == "Weapon" ? activeColor : passiveColor;
+            techValueDamageType.color = tech.type == "Weapon" ? activeColor : passiveColor;
+            techValueReload.color = tech.type == "Weapon" ? activeColor : passiveColor;
+            techValueTargetType.color = tech.type == "Ballistic Computer" ? activeColor : passiveColor;
+            techValueGunCount.color = tech.type == "Corps" ? activeColor : passiveColor;
+
+            techLabelPlatformMass.color = tech.type == "Platform" ? activeColor : passiveColor;
+            techLabelCorpsMass.color = tech.type == "Corps" ? activeColor : passiveColor;
+            techLabelHorizontalSpeed.color = tech.type == "Platform" ? activeColor : passiveColor;
+            techLabelVerticalSpeed.color = tech.type == "Platform" ? activeColor : passiveColor;
+            techLabelEnergy.color = activeColor;
+            techLabelRadius.color = tech.type == "Ballistic Computer" ? activeColor : passiveColor;
+            techLabelDamage.color = tech.type == "Weapon" ? activeColor : passiveColor;
+            techLabelDamageType.color = tech.type == "Weapon" ? activeColor : passiveColor;
+            techLabelReload.color = tech.type == "Weapon" ? activeColor : passiveColor;
+            techLabelTargetType.color = tech.type == "Ballistic Computer" ? activeColor : passiveColor;
+            techLabelGunCount.color = tech.type == "Corps" ? activeColor : passiveColor;
+
+            switch (tech.type)
+            {
+                case "Weapon":
+
+                    break;
+                case "Main Computer":
+                    break;
+                case "Ballistic Computer":
+                    break;
+                case "Power Plant":
+                    break;
+                case "Corps":
+                    break;
+                case "Platform":
+                    break;
+            }
         }
         else
         {
+            techName.text = tech.name;
             techValuePlatformMass.text = "-";
             techValueCorpsMass.text = "-";
             techValueHorizontalSpeed.text = "-";
@@ -72,6 +135,31 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
             techValueReload.text = "-";
             techValueTargetType.text = "-";
             techValueGunCount.text = "-";
+
+            techValuePlatformMass.color = passiveColor;
+            techValueCorpsMass.color = passiveColor;
+            techValueHorizontalSpeed.color = passiveColor;
+            techValueVerticalSpeed.color = passiveColor;
+            techValueEnergy.color = passiveColor;
+            techValueRadius.color = passiveColor;
+            techValueDamage.color = passiveColor;
+            techValueDamageType.color = passiveColor;
+            techValueReload.color = passiveColor;
+            techValueTargetType.color = passiveColor;
+            techValueGunCount.color = passiveColor;
+
+            techLabelPlatformMass.color = passiveColor;
+            techLabelCorpsMass.color = passiveColor;
+            techLabelHorizontalSpeed.color = passiveColor;
+            techLabelVerticalSpeed.color = passiveColor;
+            techLabelEnergy.color = passiveColor;
+            techLabelRadius.color = passiveColor;
+            techLabelDamage.color = passiveColor;
+            techLabelDamageType.color = passiveColor;
+            techLabelReload.color = passiveColor;
+            techLabelTargetType.color = passiveColor;
+            techLabelGunCount.color = passiveColor;
+
         }
 
         cameraMovementOff();

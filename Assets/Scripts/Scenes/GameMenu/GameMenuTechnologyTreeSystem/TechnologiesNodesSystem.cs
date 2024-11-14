@@ -9,6 +9,8 @@ public class TechnologiesNodesSystem : MonoBehaviour
 
     [SerializeField] private GameMenuTechnologyTreeSystem gameMenuTechnologyTreeSystem;
 
+
+
     public void FullUpdateTechTreeNodes()
     {
         foreach (TechnologyNode techNode in techNodesList)

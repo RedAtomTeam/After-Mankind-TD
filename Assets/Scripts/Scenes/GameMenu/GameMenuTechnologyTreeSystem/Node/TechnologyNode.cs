@@ -12,7 +12,7 @@ public class TechnologyNode : MonoBehaviour
     [SerializeField] private Technology technologyEntity;
     [SerializeField] private int status;
 
-    private void Start()
+    private void Awake()
     {
         gameManager = GameManager.Instance;
     }
