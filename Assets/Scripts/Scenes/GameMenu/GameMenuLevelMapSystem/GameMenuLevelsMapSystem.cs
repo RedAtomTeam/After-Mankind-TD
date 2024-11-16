@@ -4,33 +4,36 @@ using UnityEngine;
 
 public class GameMenuLevelsMapSystem : MonoBehaviour
 {
-    [SerializeField] private GameMenuController gameMenuController;
+    // Надсистемы
+    [SerializeField] GameMenuController gameMenuController;
 
+    // Подсистемы
+    [SerializeField] LevelsNodesSystem nodesSystem;
+    [SerializeField] LevelsLinksSystem linksSystem;
 
-    [SerializeField] private LevelsNodesSystem nodesSystem;
-    [SerializeField] private LevelsLinksSystem linksSystem;
+    // Внутренние переменные
+    [SerializeField] GameObject obj;
 
-    [SerializeField] private GameObject obj;
-
+    // Функция открытия информации об уровне
     public void OpenLevelInfo(Level level)
     {
         gameMenuController.OpenLevelInfo(level);
     }
 
-
+    // Функция обновления карты уровней
     public void FullUpdateMap()
     {
         nodesSystem.FullUpdateNodes();
         linksSystem.FullUpdateLinks();
     }
 
-
+    // Функция открытия карты урвоней
     public void OpenMapTab()
     {
-        print(1);
         obj.SetActive(true);
     }
 
+    // Функция закрытия карты уровней
     public void CloseMapTab()
     {
         obj.SetActive(false);

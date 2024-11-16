@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class TechnologyNode : MonoBehaviour
 {
-    private GameManager gameManager;
+    // Менеджер сохранений
+    GameManager gameManager;
 
-    [SerializeField] private TechnologiesNodesSystem technologiesNodesSystem;
-    [SerializeField] private TechnologyNodeVisualController visualController;
+    // Надсистемы
+    [SerializeField] TechnologiesNodesSystem technologiesNodesSystem;
+    
+    // Подсистемы
+    [SerializeField] TechnologyNodeVisualController visualController;
 
-    [SerializeField] private Technology technologyEntity;
-    [SerializeField] private int status;
+    [SerializeField] Technology technologyEntity;
+    [SerializeField] int status;
 
     private void Awake()
     {
         gameManager = GameManager.Instance;
     }
 
+    // Функция клика
     public void Click()
     {
         OpenTechInfo();
     }
 
+    // Функция обновления статуса
     public void UpdateStatus()
     {
         int currentID = technologyEntity.ID;
@@ -48,21 +54,25 @@ public class TechnologyNode : MonoBehaviour
         }
     }
 
+    // Функция открытия информации о технологии
     public void OpenTechInfo()
     {
         technologiesNodesSystem.OpenTechInfo(technologyEntity);
     }
 
+    // Функция изучения
     public void SetLearned()
     {
         visualController.SetLearned();
     }
 
+    // Функция открытия
     public void SetOpened()
     {
         visualController.SetOpened();
     }
 
+    // Функция закрытия
     public void SetClosed()
     {
         visualController.SetClosed();

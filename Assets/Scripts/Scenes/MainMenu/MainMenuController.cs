@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class MainMenuController : MonoBehaviour
 {
+    // Контроллер сцены главного меню
 
+    // Подсистемы
     [SerializeField] LoadingScreenSystem_MainScript loadingScreenSystem;
     [SerializeField] MainMenuInterfaceSystem_MainScript mainMenuInterface;
-    [SerializeField] private MainMenuCameraSystem_MainScript mainMenuCameraSystem;
+    [SerializeField] MainMenuCameraSystem_MainScript mainMenuCameraSystem;
 
     // Функция обновления громкости.
     public void UpdateSoundsVolume()

@@ -6,13 +6,16 @@ using UnityEngine.UI;
 
 public class GlossaryEnemyInfoSystem : MonoBehaviour
 {
-    [SerializeField] private GlossaryEnemyInfoParametrsSystem glossaryEnemyInfoParametrs;
+    // Подсистемы
+    [SerializeField] GlossaryEnemyInfoParametrsSystem glossaryEnemyInfoParametrs;
 
-    [SerializeField] private TextMeshProUGUI name_TMP_Obj;
-    [SerializeField] private TextMeshProUGUI description_TMP_Obj;
-    [SerializeField] private RawImage image_RawImage_Obj;
+    // Внутренние переменные
+    [SerializeField] TextMeshProUGUI name_TMP_Obj;
+    [SerializeField] TextMeshProUGUI description_TMP_Obj;
+    [SerializeField] RawImage image_RawImage_Obj;
 
 
+    // Функция установки информации о противнике в окно информации о противнике
     public void SetInfoAboutEnemy(Enemy EnemySO)
     {
         image_RawImage_Obj.texture = (Texture) Resources.Load(EnemySO.imageName);

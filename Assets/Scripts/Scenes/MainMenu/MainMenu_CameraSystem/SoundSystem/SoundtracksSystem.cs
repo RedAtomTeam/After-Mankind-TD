@@ -6,10 +6,10 @@ public class SoundtracksSystem : MonoBehaviour
 {
     // Скрипт для проигрывания треков.
 
-    [SerializeField] private List<AudioClip> trackList = new List<AudioClip>();     // Список треков.
-    [SerializeField] private AudioSource audioSource;                               // Ссылка на вывод для треков.
+    [SerializeField] List<AudioClip> trackList = new List<AudioClip>();     // Список треков.
+    [SerializeField] AudioSource audioSource;                               // Ссылка на вывод для треков.
 
-    private int currentTrack = 0;   // Указатель на настоящий трек.
+    int currentTrack = 0;   // Указатель на настоящий трек.
 
     // При старте устанавливаем актуальную громкость.
     private void Start()

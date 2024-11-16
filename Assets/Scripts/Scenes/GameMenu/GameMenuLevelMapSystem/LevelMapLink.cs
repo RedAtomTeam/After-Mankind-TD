@@ -5,20 +5,26 @@ using UnityEngine.UI;
 
 public class LevelMapLink : MonoBehaviour
 {
-    private GameManager gameManager;
+    // Менеджер сохранений
+    GameManager gameManager;
 
-    [SerializeField] private LevelsLinksSystem levelsLinksSystem;
-    [SerializeField] private LevelMapNode firstLevelNode;
-    [SerializeField] private LevelMapNode secondLevelNode;
-    [SerializeField] private int status = 0;
-    [SerializeField] private RectTransform lineImage; // Задайте в инспекторе
-    [SerializeField] private float lineWidth;
-    [SerializeField] private LevelLinkVisualController visualController;
+    // Надсистемы
+    [SerializeField] LevelsLinksSystem levelsLinksSystem;
+
+    // Подсистемы
+    [SerializeField] LevelLinkVisualController visualController;
+
+    // Вунтренние переменные
+    [SerializeField] LevelMapNode firstLevelNode;
+    [SerializeField] LevelMapNode secondLevelNode;
+    [SerializeField] int status = 0;
+    [SerializeField] RectTransform lineImage; 
+    [SerializeField] float lineWidth;
     
-    private Level levelEntityPrev;
-    private Level levelEntityNext;
-    private RectTransform pointA; // Задайте в инспекторе
-    private RectTransform pointB; // Задайте в инспекторе
+    Level levelEntityPrev;
+    Level levelEntityNext;
+    RectTransform pointA; 
+    RectTransform pointB; 
 
     private void Start()
     {
@@ -32,11 +38,11 @@ public class LevelMapLink : MonoBehaviour
         DrawLine(pointA.anchoredPosition, pointB.anchoredPosition);
     }
 
+    // Функция позиционирования линии
     void DrawLine(Vector2 start, Vector2 end)
     {
         lineImage.anchoredPosition = new Vector2((start.x + end.x)/2, (start.y + end.y)/2);
 
-        //lineImage.anchoredPosition = start; // Установка начальной позиции линии
         Vector2 direction = end - start; // Разница между конечной и начальной точками
         lineImage.sizeDelta = new Vector2(direction.magnitude, lineImage.sizeDelta.y * lineWidth); // Установка длины линии
 
@@ -45,6 +51,7 @@ public class LevelMapLink : MonoBehaviour
         lineImage.rotation = Quaternion.Euler(0, 0, angle);
     }
 
+    // Функция обновления статуса
     public void UpdateStatus()
     {
         int prevID = levelEntityPrev.ID;
@@ -52,10 +59,6 @@ public class LevelMapLink : MonoBehaviour
        
         foreach (LevelData levelData in gameManager.playerGameData.levels)
         {
-            //if (levelData.ID == prevID)
-            //{
-            //    status = (levelData.status >= status ? levelData.status : status);
-            //}
             if (levelData.ID == nextID)
             {
                 status = (levelData.status >= status ? levelData.status : status);
@@ -75,16 +78,20 @@ public class LevelMapLink : MonoBehaviour
                 break;
         }
     }
+
+    // Функция установки состояни Passed
     public void SetPassed()
     {
         visualController.SetPassed();
     }
 
+    // Функция установки состояни Opened
     public void SetOpened()
     {
         visualController.SetOpened();
     }
 
+    // Функция установки состояни Closed
     public void SetClosed()
     {
         visualController.SetClosed();

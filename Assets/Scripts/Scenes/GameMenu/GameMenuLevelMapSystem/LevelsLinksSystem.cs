@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class LevelsLinksSystem : MonoBehaviour
 {
-    [SerializeField] private GameMenuLevelsMapSystem gameMenuLevelsMapSystem;
+    // Надсистемы
+    [SerializeField] GameMenuLevelsMapSystem gameMenuLevelsMapSystem;
 
-    [SerializeField] private List<LevelMapLink> linksList;
+    [SerializeField] List<LevelMapLink> linksList;
 
+    // Функция обновления связей между уровнями
     public void FullUpdateLinks()
     {
         foreach (LevelMapLink levelLink in linksList)

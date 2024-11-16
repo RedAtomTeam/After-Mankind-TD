@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class GameMenuCameraSystem : MonoBehaviour
 {
-    [SerializeField]
-    private Camera cam;
+    
+    // Внутренние переменные
+    [SerializeField] Camera cam;
 
-    private Vector3 dragOrigin;
+    Vector3 dragOrigin;
 
-    [SerializeField]
-    public SpriteRenderer mapRenderer;
+    [SerializeField] SpriteRenderer mapRenderer;
+    [SerializeField] SpriteRenderer worldMapTabRenderer;
+    [SerializeField] SpriteRenderer technologiesTabRenderer;
 
-    [SerializeField]
-    private SpriteRenderer worldMapTabRenderer;
+    Vector3 startPosition;
 
-    [SerializeField]
-    private SpriteRenderer technologiesTabRenderer;
-
-    private Vector3 startPosition;
-
-    private float mapMinX, mapMaxX, mapMinY, mapMaxY;
+    float mapMinX;
+    float mapMaxX;
+    float mapMinY;
+    float mapMaxY;
 
     public bool cameraIsOn = true;
 
@@ -30,18 +29,16 @@ public class GameMenuCameraSystem : MonoBehaviour
 
     public float wheelSense;
 
-
+    // Функция для переключения между картами для камеры
     public void ChangeSpriteRenderer()
     {
         if (mapRenderer == worldMapTabRenderer)
         {
             mapRenderer = technologiesTabRenderer;
-            //targetCanvas = techTab;
         }
         else
         {
             mapRenderer = worldMapTabRenderer;
-            //targetCanvas = levelMapTab;
         }
 
         cam.orthographicSize = defaultCameraSize;
@@ -65,6 +62,7 @@ public class GameMenuCameraSystem : MonoBehaviour
         mapMaxY = mapRenderer.transform.position.y + mapRenderer.bounds.size.y / 2f;
     }
 
+    // Функция переноса камеры в стартовую позицию
     public void SetPositionOnStartPosition()
     {
         cam.transform.position = startPosition;
@@ -73,7 +71,6 @@ public class GameMenuCameraSystem : MonoBehaviour
     // Функция отслеживание состояния мыши вызывается каждый кадр.
     void Update()
     {
-
         if (cameraIsOn)
         {
             PanCamera();
@@ -83,9 +80,6 @@ public class GameMenuCameraSystem : MonoBehaviour
     // Функция для отслеживания состояния мыши и перемещения камеры.
     void PanCamera()
     {
-        //print(cam.ScreenToWorldPoint(Input.mousePosition));
-        //print(cam.ScreenToWorldPoint(new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 10)));
-
         if (Input.GetMouseButtonDown(2))
         {
             dragOrigin = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100));
@@ -116,20 +110,6 @@ public class GameMenuCameraSystem : MonoBehaviour
             dragOrigin = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100));
             Vector3 difference = dragOrigin - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100));
             cam.transform.position = ClampCamera(cam.transform.position + difference);
-
-            //print(Input.GetAxis("Mouse ScrollWheel"));
-
-            //float zoomCoef = targetCanvas.GetComponent<RectTransform>().localScale.x + Input.GetAxis("Mouse ScrollWheel") * 0.1f;
-            //if (zoomCoef > maxZoom)
-            //{
-            //    zoomCoef = maxZoom;
-            //}
-            //if (zoomCoef < minZoom)
-            //{
-            //    zoomCoef = minZoom;
-            //}
-            //zoom = zoomCoef;
-            //targetCanvas.GetComponent<RectTransform>().localScale = new Vector3(zoomCoef, zoomCoef, zoomCoef);
         }
     }
 

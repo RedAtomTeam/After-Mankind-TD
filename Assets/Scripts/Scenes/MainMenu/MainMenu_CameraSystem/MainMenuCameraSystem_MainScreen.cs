@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class MainMenuCameraSystem_MainScript : MonoBehaviour
 {
-    // Надсистемы.
-    //[SerializeField] MainMenuController mainMenuController;
-
-    // Системы одного уровня.
-    //[SerializeField] private MainMenuInterfaceSystem_MainScript mainMenuInterfaceSystem_MainScript;     // Система интерфейса.
 
     // Подсистемы.
-    [SerializeField] private SoundSystem_MainScript soundSystem_MainScript;     // Звуковая система
+    [SerializeField] SoundSystem_MainScript soundSystem_MainScript;     // Звуковая система
 
     // Функция обновления громкости.
     // При отсутствии значения в качестве громкости устанавливается значение, сохранённое в PlayerPrefs.

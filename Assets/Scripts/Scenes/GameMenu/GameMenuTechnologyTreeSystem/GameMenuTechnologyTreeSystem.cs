@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class GameMenuTechnologyTreeSystem : MonoBehaviour
 {
-    [SerializeField] private GameMenuController gameMenuController;
+    // Надсистемы
+    [SerializeField] GameMenuController gameMenuController;
 
-    [SerializeField] private TechnologiesNodesSystem technologiesNodesSystem;
-    [SerializeField] private TechnologiesLinksSystem technologiesLinksSystem;
-    [SerializeField] private TechnologiesConnectorsSystem technologiesConnectorsSystem;
+    // Подсистемы
+    [SerializeField] TechnologiesNodesSystem technologiesNodesSystem;
+    [SerializeField] TechnologiesLinksSystem technologiesLinksSystem;
+    [SerializeField] TechnologiesConnectorsSystem technologiesConnectorsSystem;
 
-    [SerializeField] private GameObject obj;
+    [SerializeField] GameObject obj;
 
+    // Функция открытия информации о технологии
     public void OpenTechInfo(Technology tech)
     {
         gameMenuController.OpenTechInfo(tech);
     }
 
+    // Функция обновления дерева технологий
     public void FullUpdateTechTree()
     {
         technologiesNodesSystem.FullUpdateTechTreeNodes();
@@ -24,12 +28,13 @@ public class GameMenuTechnologyTreeSystem : MonoBehaviour
         technologiesConnectorsSystem.FullUpdateTechTreeConnectors();
     }
 
+    // Функция открытия дерева технологий
     public void OpenTechTreeTab()
     {
-        print(2);
         obj.SetActive(true);
     }
 
+    // Функция закрытия дерева технологий
     public void CloseTechTreeTab()
     {
         obj.SetActive(false);

@@ -4,29 +4,36 @@ using UnityEngine;
 
 public class LevelMapNode : MonoBehaviour
 {
-    private GameManager gameManager;
+    // Менеджер сохранений
+    GameManager gameManager;
 
-    [SerializeField] private LevelsNodesSystem levelsNodesSystem;
+    // Надсистемы
+    [SerializeField] LevelsNodesSystem levelsNodesSystem;
 
-    [SerializeField] public Level levelEntity;
-    [SerializeField] private int status;
-    [SerializeField] private LevelNodeVisualController levelNodeVisualController;
+    // Подсистемы
+    [SerializeField] LevelNodeVisualController levelNodeVisualController;
+
+    public Level levelEntity;
+    [SerializeField] int status;
 
     private void Start()
     {
         gameManager = GameManager.Instance;
     }
     
+    // Функция для клика по кнопке уровня
     public void Click()
     {
         OpenLevelInfo();
     }
 
+    // Функция открытия информации об уровне
     public void OpenLevelInfo()
     {
         levelsNodesSystem.OpenLevelInfo(levelEntity);
     }
 
+    // Функция обновления состояния ноды
     public void UpdateStatus()
     {
         int currentID = levelEntity.ID;
@@ -51,16 +58,20 @@ public class LevelMapNode : MonoBehaviour
                 break;
         }
     }
+
+    // Функция установки состояни Passed
     public void SetPassed()
     {
         levelNodeVisualController.SetPassed();
     }
 
+    // Функция установки состояни Opened
     public void SetOpened()
     {
         levelNodeVisualController.SetOpened();
     }
 
+    // Функция установки состояни Closed
     public void SetClosed()
     {
         levelNodeVisualController.SetClosed();

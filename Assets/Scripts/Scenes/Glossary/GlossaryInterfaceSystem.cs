@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class GlossaryInterfaceSystem : MonoBehaviour
 {
-    [SerializeField] private GlossaryController controller;
+    // Надсистемы
+    [SerializeField] GlossaryController controller;
 
-    [SerializeField] private GlossaryEnemyInfoSystem glossaryEnemyInfo;
-    [SerializeField] private GlossaryEnemiesListSystem glossaryEnemiesList;
+    // Подсистемы
+    [SerializeField] GlossaryEnemyInfoSystem glossaryEnemyInfo;
+    [SerializeField] GlossaryEnemiesListSystem glossaryEnemiesList;
 
+    // Функция установки информации о противнике в окно информации о противнике
     public void SetDataAboutEnemy(Enemy EnemySO)
     {
         glossaryEnemyInfo.SetInfoAboutEnemy(EnemySO);
     }
 
+    // Функция загрузки сцены
     public void LoadScene(string sceneName)
     {
         controller.LoadScene(sceneName);

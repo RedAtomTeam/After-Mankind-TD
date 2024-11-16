@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class LevelsNodesSystem : MonoBehaviour
 {
-    [SerializeField] private GameMenuLevelsMapSystem gameMenuLevelsMapSystem;
+    // Надсистемы
+    [SerializeField] GameMenuLevelsMapSystem gameMenuLevelsMapSystem;
 
-    [SerializeField] private List<LevelMapNode> levelNodesList;
+    // Внутренние переменные
+    [SerializeField] List<LevelMapNode> levelNodesList;
 
+    // Функция открытия информации об уровне
     public void OpenLevelInfo(Level levelEntity)
     {
         gameMenuLevelsMapSystem.OpenLevelInfo(levelEntity);
     }
 
+    // Функция обновления всех нод
     public void FullUpdateNodes()
     {
         foreach (LevelMapNode levelNode in levelNodesList)

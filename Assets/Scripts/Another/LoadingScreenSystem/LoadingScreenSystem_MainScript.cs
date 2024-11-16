@@ -8,10 +8,10 @@ public class LoadingScreenSystem_MainScript : MonoBehaviour
 {
     // Класс управления загрузкой сцен.
 
-    [SerializeField] private GameObject loadingScreenSystem_Obj;                            // Канвас с видео.
-    [SerializeField] private LoadingScreenSystem_TextController loadingScreenTextSystem;    // Ссылка на класс контроллера текста.
-    [SerializeField] private LoadingScreenSystem_VideoController loadingScreenVideoSystem;  // Ссылка на класс контроллера видео.
-    [SerializeField] private float timeText;                                                // Время на совет.
+    [SerializeField] GameObject loadingScreenSystem_Obj;                            // Канвас с видео.
+    [SerializeField] LoadingScreenSystem_TextController loadingScreenTextSystem;    // Ссылка на класс контроллера текста.
+    [SerializeField] LoadingScreenSystem_VideoController loadingScreenVideoSystem;  // Ссылка на класс контроллера видео.
+    [SerializeField] float timeText;                                                // Время на совет.
 
 
     // При запуске инициализируем показатели времени на ролики и текст.

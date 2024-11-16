@@ -6,10 +6,10 @@ using UnityEngine.Video;
 
 public class LoadingScreenSystem_VideoController : MonoBehaviour
 {
-    [SerializeField] private List<VideoClip> videoClips = new List<VideoClip>();    // Список видеоклипов.
-    [SerializeField] private VideoPlayer videoPlayer;                               // Видеоплеер.
+    [SerializeField] List<VideoClip> videoClips = new List<VideoClip>();    // Список видеоклипов.
+    [SerializeField] VideoPlayer videoPlayer;                               // Видеоплеер.
 
-    private int currentVideo;   // Указатель на нынешнее видео.
+    int currentVideo;   // Указатель на нынешнее видео.
 
     // Функция запуска работы по выводу видео.
     public void StartVideos()

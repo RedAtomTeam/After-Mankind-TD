@@ -7,8 +7,8 @@ public class SoundSystem_MainScript : MonoBehaviour
     // Класс управления звуками.
 
     // Подсистемы.
-    [SerializeField] private SoundtracksSystem soundtracksSystem;       // Скрипт управления громкостью саундтреков.
-    [SerializeField] private SoundEffectsSystem soundEffectsSystem;     // Скрипт управления громкостью звуковых эффектов.
+    [SerializeField] SoundtracksSystem soundtracksSystem;       // Скрипт управления громкостью саундтреков.
+    [SerializeField] SoundEffectsSystem soundEffectsSystem;     // Скрипт управления громкостью звуковых эффектов.
 
 
     // Функция установки громкости саундтреков.

@@ -8,20 +8,14 @@ using UnityEngine.UI;
 public class SettingsSystem_MainScript : MonoBehaviour
 {
     // Надсистемы:
-    [SerializeField] private MainMenuInterfaceSystem_MainScript mainMenuInterfaceSystem_MainScript;     // Система интерфейса.
-
-
-    // Системы одного уровня:
-
-
+    [SerializeField] MainMenuInterfaceSystem_MainScript mainMenuInterfaceSystem_MainScript;     // Система интерфейса.
 
     // Подсистемы:
-    [SerializeField] private Volume_SLIDER soundtracksVolumeSlider;     // Слайдер громкости треков.
-    [SerializeField] private Volume_SLIDER soundEffectsVolumeSlider;    // Слайдер громкости эффектов
-
+    [SerializeField] Volume_SLIDER soundtracksVolumeSlider;     // Слайдер громкости треков.
+    [SerializeField] Volume_SLIDER soundEffectsVolumeSlider;    // Слайдер громкости эффектов
 
     // Переменные системы:
-    [SerializeField] private GameObject Settings_Obj;   // Объект.
+    [SerializeField] GameObject Settings_Obj;   // Объект.
     private List<Resolution> resolutions;               // Все доступные разрешения.
     public TMP_Dropdown resolutionDropdown;             // Ссылка на выпадающий список разрешения экрана.
     public TMP_Dropdown qualityDropdown;                // Ссылка на выпадающий список качества.

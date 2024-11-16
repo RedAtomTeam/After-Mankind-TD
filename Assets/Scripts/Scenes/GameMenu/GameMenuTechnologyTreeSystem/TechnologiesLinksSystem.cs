@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class TechnologiesLinksSystem : MonoBehaviour
 {
-    [SerializeField] private List<TechnologyLink> techLinksList;
+    
+    [SerializeField] List<TechnologyLink> techLinksList;
 
+    // Функция обновления связей дерева технологий
     public void FullUpdateTechTreeLinks()
     {
         foreach (TechnologyLink techLink in techLinksList)

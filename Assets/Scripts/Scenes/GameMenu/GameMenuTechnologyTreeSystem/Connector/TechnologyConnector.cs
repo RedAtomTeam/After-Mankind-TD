@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class TechnologyConnector : MonoBehaviour
 {
-    private GameManager gameManager;
+    // Менеджер сохранений
+    GameManager gameManager;
 
-    [SerializeField] private TechnologiesConnectorsSystem technologiesConnectorsSystem;
-    [SerializeField] private TechnologyConnectorVisualController visualController;
+    // Надсистемы
+    [SerializeField] TechnologiesConnectorsSystem technologiesConnectorsSystem;
+    
+    // Подсистемы
+    [SerializeField] TechnologyConnectorVisualController visualController;
 
-    [SerializeField] private List<Technology> techEntityPrevs;
-    [SerializeField] private List<Technology> techEntityNext;
+    [SerializeField] List<Technology> techEntityPrevs;
+    [SerializeField] List<Technology> techEntityNext;
 
-    private int status;
+    int status;
 
     private void Start()
     {

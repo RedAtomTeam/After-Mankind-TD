@@ -5,25 +5,16 @@ using UnityEngine;
 public class SavesSystem_MainScript : MonoBehaviour
 {
     // Надсистемы:
-    [SerializeField] private MainMenuInterfaceSystem_MainScript mainMenuInterfaceSystem_MainScreen;     // Система интерфейса.
-
-
-    // Системы одного уровня:
-
-
-
-    // Подсистемы:
-
-
+    [SerializeField] MainMenuInterfaceSystem_MainScript mainMenuInterfaceSystem_MainScreen;     // Система интерфейса.
 
     // Внутренние переменные:
-    [SerializeField] private GameObject Saves_Obj;                                  // Объект.
+    [SerializeField] GameObject Saves_Obj;                                  // Объект.
     private List<string> savesNames = new List<string>();                           // Список всех имён сохранений.
-    [SerializeField] private GameObject saveTemplate;                               // Ссылка на шаблон объекта сохранения.
-    [SerializeField] private GameObject content;                                    // Ссылка на пространство для размещения шаблонов.
+    [SerializeField] GameObject saveTemplate;                               // Ссылка на шаблон объекта сохранения.
+    [SerializeField] GameObject content;                                    // Ссылка на пространство для размещения шаблонов.
     public SaveNode currentSave;                                                    // Выбранное сохранение.
-    [SerializeField] private List<string> techNameList = new List<string>();        // Список технологий.
-    [SerializeField] private List<string> levelNameList = new List<string>();       // Список уровней.
+    [SerializeField] List<string> techNameList = new List<string>();        // Список технологий.
+    [SerializeField] List<string> levelNameList = new List<string>();       // Список уровней.
 
     // Функция открытия окна.
     public void Open()
@@ -97,83 +88,12 @@ public class SavesSystem_MainScript : MonoBehaviour
     // Функция удаления выбранного сохранения.
     public void DelSave()
     {
-        if (currentSave != null)
-        {
-            // Обновляем список имён сохранений - создаём пустую строку и заполняем её именами
-            // из нынешнего списка сохранений, игнорируя то, которое мы должны удалить.
-            // После сохраняем вместо старого списка имён новый, в котором уже нет удаляемого имени. 
-            string newSavesNamesString = "";
-            string savesNamesString = PlayerPrefs.GetString("savesNames");
-            foreach (string saveName in savesNamesString.Split(new char[] { ' ' }))
-            {
-                if (saveName != currentSave.Name)
-                {
-                    newSavesNamesString = $"{(newSavesNamesString == "" ? "" : $"{newSavesNamesString} ")}{saveName}";
-                }
-            }
-            PlayerPrefs.SetString("savesNames", newSavesNamesString);
-
-            // Удаляем записи, связанные с удаляемым сохранением.
-            PlayerPrefs.DeleteKey($"{currentSave.Name}_techBalance");
-            PlayerPrefs.DeleteKey($"{currentSave.Name}_date");
-            PlayerPrefs.DeleteKey($"{currentSave.Name}_time");
-            PlayerPrefs.DeleteKey($"{currentSave.Name}_openLevels");
-
-            int targetLevel = 1;
-
-            while (PlayerPrefs.HasKey($"{currentSave.Name}_Level{targetLevel}_Status"))
-            {
-                PlayerPrefs.SetInt($"Level{targetLevel}_Status", PlayerPrefs.GetInt($"{currentSave.Name}_Level{targetLevel}_Status"));
-                PlayerPrefs.SetString($"Level{targetLevel}_Time", PlayerPrefs.GetString($"{currentSave.Name}_Level{targetLevel}_Time"));
-                PlayerPrefs.SetString($"Level{targetLevel}_Defence", PlayerPrefs.GetString($"{currentSave.Name}_Level{targetLevel}_Defence"));
-                targetLevel++;
-            }
-
-            for (int i = 0; i < 4; i++)
-            {
-                for (int j = 0; j < (i == 4 ? 8 : 7); j++)
-                {
-                    PlayerPrefs.DeleteKey($"{currentSave.Name}_tech{i}_{j}");
-                }
-            }
-        }
-        else
-        {
-            print("DelSave_BTN: Error - current save is null");
-        }
-
-        UpdateListOfSaves();
-
+        
     }
 
     // Функция загрузки сохранения.
     public void ContinueSave()
     {
-        // Если сохранение выбрано - получаем имя, устанавливаем его
-        // как выбранное имя сохранения и загружаем сцену игрового меню.
-        if (currentSave != null)
-        {
-            string saveName = currentSave.Name;
-
-            foreach (string techName in techNameList)
-            {
-                PlayerPrefs.SetInt(techName, PlayerPrefs.GetInt($"{saveName}_{techName}"));
-            }
-
-            foreach (string levelName in levelNameList)
-            {
-                PlayerPrefs.SetInt($"{levelName}_Status", PlayerPrefs.GetInt($"{saveName}_{levelName}_Status"));
-            }
-
-            PlayerPrefs.SetInt("techBalance", PlayerPrefs.GetInt($"{saveName}_techBalance"));
-
-
-            mainMenuInterfaceSystem_MainScreen.LoadScene("GameMenu");
-        }
-        // Иначе уведомляем об ошибке.
-        else
-        {
-            print("Continue_BTN: Error - current save is null");
-        }
+        
     }
 }

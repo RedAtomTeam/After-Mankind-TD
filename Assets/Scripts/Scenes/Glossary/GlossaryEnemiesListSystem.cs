@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class GlossaryEnemiesListSystem : MonoBehaviour
 {
-    [SerializeField] private GlossaryInterfaceSystem glossaryInterface;
+    // Класс управления списком противников
 
-    [SerializeField] private GameObject EnemiesListContent;
-    [SerializeField] private GameObject EnemiesListElementPrefab;
-    [SerializeField] private List<GlossaryEnemiesListElementSystem> glossaryEnemiesListElements;
+    // Надсистемы
+    [SerializeField] GlossaryInterfaceSystem glossaryInterface;
 
-
-    private Enemy[] allEnemiesEntities;
-    private GlossaryEnemiesListElementSystem selectedGlossaryEnemiesListElementSystem;
+    // Внутренние переменные
+    [SerializeField] List<GlossaryEnemiesListElementSystem> glossaryEnemiesListElements;
+    [SerializeField] GameObject EnemiesListContent;
+    [SerializeField] GameObject EnemiesListElementPrefab;
+    Enemy[] allEnemiesEntities;
+    GlossaryEnemiesListElementSystem selectedGlossaryEnemiesListElementSystem;
 
     private void Start()
     {
         Initialize();
     }
 
+    // Функция инициализации
     private void Initialize()
     {
         allEnemiesEntities = Resources.LoadAll<Enemy>("");
@@ -35,6 +38,7 @@ public class GlossaryEnemiesListSystem : MonoBehaviour
         }
     }
 
+    // Функция выбора противника
     public void SelectElement(GlossaryEnemiesListElementSystem targetGlossaryEnemiesListElementSystem)
     {
         selectedGlossaryEnemiesListElementSystem = targetGlossaryEnemiesListElementSystem;

@@ -6,29 +6,33 @@ using UnityEngine.UI;
 
 public class LevelNodeVisualController : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private LevelMapNode levelMapNode;
+    // Надсистемы
+    [SerializeField] LevelMapNode levelMapNode;
 
-    [SerializeField] private RawImage nodeObject;
+    [SerializeField] RawImage nodeObject;
+    [SerializeField] Color passedColor;
+    [SerializeField] Color openedColor;
+    [SerializeField] Color closedColor;
 
-    [SerializeField] private Color passedColor;
-    [SerializeField] private Color openedColor;
-    [SerializeField] private Color closedColor;
-
+    // Функция установки состояни Passed
     public void SetPassed()
     {
         nodeObject.color = passedColor;
     }
 
+    // Функция установки состояни Opened
     public void SetOpened()
     {
         nodeObject.color = openedColor;
     }
 
+    // Функция установки состояни Closed
     public void SetClosed()
     {
         nodeObject.color = closedColor;
     }
 
+    // Функция обработки кликов
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
         if (Input.GetMouseButtonUp(0))

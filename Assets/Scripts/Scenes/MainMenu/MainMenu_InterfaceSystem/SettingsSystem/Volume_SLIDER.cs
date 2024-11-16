@@ -12,23 +12,12 @@ public class Volume_SLIDER : MonoBehaviour
 {
     // Скрипт для слайдера, отвечающего за устанвоку громкости звука для треков.
 
-
     // Надсистем:
-    [SerializeField] private SettingsSystem_MainScript settingsSystem_MainScript;   // Система управления настройками.
-
-
-    // Системы одного уровня:
-
-
-
-    // Подсистемы:
-
-
+    [SerializeField] SettingsSystem_MainScript settingsSystem_MainScript;   // Система управления настройками.
 
     // Внутренние переменные.
     [SerializeField] Slider volumeSliderObj; // Слайдер для регулировки звука.
     [SerializeField] TextMeshProUGUI volumeIndexObj; // Текст, отображающий громкость звука.
-
    
 
     // Функция смены громкость звука для саундтреков.

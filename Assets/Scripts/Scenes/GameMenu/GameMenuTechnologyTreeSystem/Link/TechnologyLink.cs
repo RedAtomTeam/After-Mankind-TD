@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class TechnologyLink : MonoBehaviour
 {
-    private GameManager gameManager;
+    // Менеджер сохранений
+    GameManager gameManager;
 
-    [SerializeField] private TechnologiesLinksSystem technologiesLinksSystem;
-    [SerializeField] private int status = 0;
-    [SerializeField] private RectTransform lineImage; // Задайте в инспекторе
-    [SerializeField] private float lineWidth;
-    [SerializeField] private TechnologyLinkVisualController visualController;
+    // Надсистемы
+    [SerializeField] TechnologiesLinksSystem technologiesLinksSystem;
 
-    [SerializeField] private List<Technology> techEntityPrevs;
-    [SerializeField] private List<Technology> techEntityNext;
-    [SerializeField] private RectTransform pointA; // Задайте в инспекторе
-    [SerializeField] private RectTransform pointB; // Задайте в инспекторе
+    // Подсистемы
+    [SerializeField] TechnologyLinkVisualController visualController;
+    
+    [SerializeField] int status = 0;
+    [SerializeField] RectTransform lineImage; // Задайте в инспекторе
+    [SerializeField] float lineWidth;
+    [SerializeField] List<Technology> techEntityPrevs;
+    [SerializeField] List<Technology> techEntityNext;
+    [SerializeField] RectTransform pointA; // Задайте в инспекторе
+    [SerializeField] RectTransform pointB; // Задайте в инспекторе
 
-    private void Start()
+    private void Awake()
     {
         gameManager = GameManager.Instance;
         DrawLine(pointA.anchoredPosition, pointB.anchoredPosition);
     }
 
+    // Функция позиционирования объекта
     void DrawLine(Vector2 start, Vector2 end)
     {
         lineImage.anchoredPosition = new Vector2((start.x + end.x) / 2, (start.y + end.y) / 2);
@@ -36,15 +41,14 @@ public class TechnologyLink : MonoBehaviour
         lineImage.rotation = Quaternion.Euler(0, 0, angle);
     }
 
+    // Функция обновления статуса
     public void UpdateStatus()
     {
         foreach (Technology tech in techEntityNext)
         {
-            int nextID = tech.ID;
-
             foreach (TechnologyData techData in gameManager.playerGameData.technologies)
             {
-                if (tech.ID == nextID)
+                if (tech.ID == techData.ID)
                 {
                     status = (techData.status >= status ? techData.status : status);
                 }
@@ -64,16 +68,20 @@ public class TechnologyLink : MonoBehaviour
                 break;
         }
     }
+
+    // Функция установки статуса Passed
     public void SetPassed()
     {
         visualController.SetPassed();
     }
 
+    // Функция установки статуса Opened
     public void SetOpened()
     {
         visualController.SetOpened();
     }
 
+    // Функция установки статуса Closed
     public void SetClosed()
     {
         visualController.SetClosed();

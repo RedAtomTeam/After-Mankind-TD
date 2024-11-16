@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class TechnologyConnectorVisualController : MonoBehaviour
 {
-    [SerializeField] private RawImage lineObject;
-
-    [SerializeField] private Color passedColor;
-    [SerializeField] private Color openedColor;
-    [SerializeField] private Color closedColor;
+    [SerializeField] RawImage lineObject;
+    [SerializeField] Color passedColor;
+    [SerializeField] Color openedColor;
+    [SerializeField] Color closedColor;
 
     public void SetPassed()
     {

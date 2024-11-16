@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class TechnologiesConnectorsSystem : MonoBehaviour
 {
-    [SerializeField] private List<TechnologyConnector> techConnectorsList;
+    // Подсистемы   
+    [SerializeField] List<TechnologyConnector> techConnectorsList;
 
+    // Функция для полного обновления всех коннекторов
     public void FullUpdateTechTreeConnectors()
     {
         foreach (TechnologyConnector techConnector in techConnectorsList)

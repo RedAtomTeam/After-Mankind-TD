@@ -149,6 +149,24 @@ public class SaveSystemDebug : MonoBehaviour
                     }
                 }
             }
+            if (opperands[0] == "SetTechLevel")
+            {
+                //print("Start Sommant SetTechStatus");
+                if (opperands.Length > 2)
+                {
+                    //print("Operand count test success");
+                    for (int i = 0; i < gameManager.playerGameData.technologies.Length; i++)
+                    {
+                        //print(gameManager.playerGameData.technologies[i].ID.ToString()+"|-|"+opperands[1]);
+
+                        if (gameManager.playerGameData.technologies[i].ID.ToString() == opperands[1])
+                        {
+                            gameManager.playerGameData.technologies[i].level = Convert.ToInt32(opperands[2]);
+                            done = true;
+                        }
+                    }
+                }
+            }
         }
 
         if (!done)

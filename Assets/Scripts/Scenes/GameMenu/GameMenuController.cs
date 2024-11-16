@@ -4,23 +4,15 @@ using UnityEngine;
 
 public class GameMenuController : MonoBehaviour
 {
-    [SerializeField] private GameMenuCameraCanvasSystem cameraCanvasSystem;
-    [SerializeField] private GameMenuCameraSystem cameraSystem;
-    [SerializeField] private GameMenuLevelsMapSystem levelsMapSystem;
-    [SerializeField] private GameMenuTechnologyTreeSystem technologyTreeSystem;
-    [SerializeField] private LoadingScreenSystem_MainScript loadingScreenSystem;
+    // Подсистемы 
 
-
-    public void cameraMovementOn()
-    {
-        cameraSystem.cameraIsOn = true;
-    }
-
-    public void cameraMovementOff()
-    {
-        cameraSystem.cameraIsOn = false;
-    }
-
+    [SerializeField] GameMenuCameraCanvasSystem cameraCanvasSystem;
+    [SerializeField] GameMenuCameraSystem cameraSystem;
+    [SerializeField] GameMenuLevelsMapSystem levelsMapSystem;
+    [SerializeField] GameMenuTechnologyTreeSystem technologyTreeSystem;
+    [SerializeField] LoadingScreenSystem_MainScript loadingScreenSystem;
+    
+    
     private void Start()
     {
         FullUpdateLevelMap();
@@ -28,27 +20,44 @@ public class GameMenuController : MonoBehaviour
         FullUpdateTechTree();
     }
 
+    // Функция включения движения камеры
+    public void cameraMovementOn()
+    {
+        cameraSystem.cameraIsOn = true;
+    }
+
+    // Функция выключения движения камеры
+    public void cameraMovementOff()
+    {
+        cameraSystem.cameraIsOn = false;
+    }
+
+    // Функция открытия информации о технологии
     public void OpenTechInfo(Technology tech)
     {
         cameraCanvasSystem.OpenTechInfo(tech);
     }
 
+    // Функция открытия информации об уровне
+    public void OpenLevelInfo(Level level)
+    {
+        cameraCanvasSystem.OpenLevelInfo(level);
+    }
+
+    // Функция обновления карты уровней
     public void FullUpdateLevelMap()
     {
         levelsMapSystem.FullUpdateMap();
     }
 
+    // Функция обновления дерева технологий
     public void FullUpdateTechTree()
     {
         technologyTreeSystem.FullUpdateTechTree();
     }
 
 
-    public void OpenLevelInfo(Level level)
-    {
-        cameraCanvasSystem.OpenLevelInfo(level);
-    }
-
+    // Функция открытия карты уровней
     public void OpenMapTab()
     {
         cameraSystem.SetPositionOnStartPosition();
@@ -57,11 +66,13 @@ public class GameMenuController : MonoBehaviour
         CloseTechTreeTab();
     }
 
+    // Функция закрытия карты уровней
     public void CloseMapTab()
     {
         levelsMapSystem.CloseMapTab();
     }
 
+    // Функция открытия дерева технологий
     public void OpenTechTreeTab()
     {
         cameraSystem.SetPositionOnStartPosition();
@@ -70,6 +81,7 @@ public class GameMenuController : MonoBehaviour
         CloseMapTab();
     }
 
+    // Функция закрытия дерева технологий
     public void CloseTechTreeTab()
     {
         technologyTreeSystem.CloseTechTreeTab();

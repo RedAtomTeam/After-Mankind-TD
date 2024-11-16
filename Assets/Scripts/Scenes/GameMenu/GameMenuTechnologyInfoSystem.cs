@@ -4,53 +4,71 @@ using TMPro;
 using UnityEngine;
 
 public class GameMenuTechnologyInfoSystem : MonoBehaviour
-{
-    private GameManager gameManager;
+{   
+    // Менеджер сохранений
+    GameManager gameManager;
 
-    [SerializeField] private GameMenuInterfaceSystem interfaceSystem;
+    // Надсистемы
+    [SerializeField] GameMenuInterfaceSystem interfaceSystem;
 
-    [SerializeField] private TextMeshProUGUI techName;
-    [SerializeField] private TextMeshProUGUI techLevel;
+    // Внутренние переменные
+    [SerializeField] TextMeshProUGUI techName;
+    [SerializeField] TextMeshProUGUI techLevel;
 
-    [SerializeField] private TextMeshProUGUI techLabelPlatformMass;
-    [SerializeField] private TextMeshProUGUI techLabelCorpsMass;
-    [SerializeField] private TextMeshProUGUI techLabelHorizontalSpeed;
-    [SerializeField] private TextMeshProUGUI techLabelVerticalSpeed;
-    [SerializeField] private TextMeshProUGUI techLabelEnergy;
-    [SerializeField] private TextMeshProUGUI techLabelRadius;
-    [SerializeField] private TextMeshProUGUI techLabelDamage;
-    [SerializeField] private TextMeshProUGUI techLabelDamageType;
-    [SerializeField] private TextMeshProUGUI techLabelReload;
-    [SerializeField] private TextMeshProUGUI techLabelTargetType;
-    [SerializeField] private TextMeshProUGUI techLabelGunCount;
+    // Заголовки параметров 
+    [SerializeField] TextMeshProUGUI techLabelMass;
+    [SerializeField] TextMeshProUGUI techLabelMaxMass;
+    [SerializeField] TextMeshProUGUI techLabelHorizontalSpeed;
+    [SerializeField] TextMeshProUGUI techLabelVerticalSpeed;
+    [SerializeField] TextMeshProUGUI techLabelEnergy;
+    [SerializeField] TextMeshProUGUI techLabelRadius;
+    [SerializeField] TextMeshProUGUI techLabelDamage;
+    [SerializeField] TextMeshProUGUI techLabelDamageType;
+    [SerializeField] TextMeshProUGUI techLabelReload;
+    [SerializeField] TextMeshProUGUI techLabelTargetType;
+    [SerializeField] TextMeshProUGUI techLabelGunCount;
 
-    [SerializeField] private TextMeshProUGUI techValuePlatformMass;
-    [SerializeField] private TextMeshProUGUI techValueCorpsMass;
-    [SerializeField] private TextMeshProUGUI techValueHorizontalSpeed;
-    [SerializeField] private TextMeshProUGUI techValueVerticalSpeed;
-    [SerializeField] private TextMeshProUGUI techValueEnergy;
-    [SerializeField] private TextMeshProUGUI techValueRadius;
-    [SerializeField] private TextMeshProUGUI techValueDamage;
-    [SerializeField] private TextMeshProUGUI techValueDamageType;
-    [SerializeField] private TextMeshProUGUI techValueReload;
-    [SerializeField] private TextMeshProUGUI techValueTargetType;
-    [SerializeField] private TextMeshProUGUI techValueGunCount;
+    // Ячейки для параметров
+    [SerializeField] TextMeshProUGUI techValueMass;
+    [SerializeField] TextMeshProUGUI techValueMaxMass;
+    [SerializeField] TextMeshProUGUI techValueHorizontalSpeed;
+    [SerializeField] TextMeshProUGUI techValueVerticalSpeed;
+    [SerializeField] TextMeshProUGUI techValueEnergy;
+    [SerializeField] TextMeshProUGUI techValueRadius;
+    [SerializeField] TextMeshProUGUI techValueDamage;
+    [SerializeField] TextMeshProUGUI techValueDamageType;
+    [SerializeField] TextMeshProUGUI techValueReload;
+    [SerializeField] TextMeshProUGUI techValueTargetType;
+    [SerializeField] TextMeshProUGUI techValueGunCount;
 
-    [SerializeField] private TextMeshProUGUI techDescryption;
-    [SerializeField] private TextMeshProUGUI techCost;
+    [SerializeField] TextMeshProUGUI techDescryption;
+    [SerializeField] TextMeshProUGUI techCost;
 
-    [SerializeField] private Color activeColor;
-    [SerializeField] private Color passiveColor;
+    // Цвета для активных и неактивных параметров
+    [SerializeField] Color activeColor;
+    [SerializeField] Color passiveColor;
 
-    [SerializeField] private GameObject obj;
+    // Текст кнопки 
+    [SerializeField] TextMeshProUGUI learnButtonText;
 
-    private Technology targetTech = null;
+    // Кнопка изучения
+    [SerializeField] GameObject learn;
 
+    // Цена и текст цены
+    [SerializeField] GameObject cost;
+    [SerializeField] TextMeshProUGUI costText;
+
+    [SerializeField] GameObject obj;
+
+    Technology targetTech = null;
+
+    // Загрузка менеджера сохранений
     private void Awake()
     {
         gameManager = GameManager.Instance;
     }
 
+    // Загрузка данных о технологии
     public void LoadTechInfo(Technology tech)
     {
         targetTech = tech;
@@ -59,6 +77,28 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
         {
             if (tech.ID == technology.ID)
             {
+                if (technology.level == tech.maxLevel)
+                {
+                    learn.SetActive(false);
+                    cost.SetActive(false);
+                }
+                else
+                {
+                    learn.SetActive(true);
+                    cost.SetActive(true);
+                }
+
+                if (technology.level == 0)
+                {
+                    learnButtonText.text = "Изучить";
+                    costText.text = tech.openCost.ToString();
+                }
+                else 
+                { 
+                    learnButtonText.text = "Улучшить";
+                    costText.text = (tech.levelUpCost * technology.level).ToString();
+                }
+                
                 techLevel.text = $"{technology.level}/{tech.maxLevel}";
                 break;
             }
@@ -67,23 +107,40 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
         if (tech.module != null)
         {
             techName.text = tech.module.name;
-            techValuePlatformMass.text = tech.module.PlatformMass.ToString();
-            techValueCorpsMass.text = tech.module.CorpsMass.ToString();
-            techValueHorizontalSpeed.text = tech.module.HorizontalSpeed.ToString();
-            techValueVerticalSpeed.text = tech.module.VerticalSpeed.ToString();
-            techValueEnergy.text = tech.module.Energy.ToString();
-            techValueRadius.text = tech.module.Radius.ToString();
+            techValueMass.text = tech.module.mass.ToString() + (PlayerPrefs.GetString("Language", "Rus") == "Rus" ? " кг" : " k");
+            techValueMaxMass.text = tech.module.maxMass.ToString() + (PlayerPrefs.GetString("Language", "Rus") == "Rus" ? " кг" : " k");
+            techValueHorizontalSpeed.text = tech.module.HorizontalSpeed.ToString() + (PlayerPrefs.GetString("Language", "Rus") == "Rus" ? " град./с." : " deg./sec.");
+            techValueVerticalSpeed.text = tech.module.VerticalSpeed.ToString() + (PlayerPrefs.GetString("Language", "Rus") == "Rus" ? " град./с." : " deg./sec.");
+            techValueEnergy.text = ((tech.type == "Power Plant" ? tech.module.Energy : "-") + " / " + (tech.type == "Power Plant" ? "-" : tech.module.Energy)) + (PlayerPrefs.GetString("Language", "Rus") == "Rus" ? " кВ" : "kV");
+            techValueRadius.text = tech.module.Radius.ToString() + (PlayerPrefs.GetString("Language", "Rus") == "Rus" ? " м" : " m");
             techValueDamage.text = tech.module.Damage.ToString();
             techValueDamageType.text = $"K: {tech.module.DamageKinetic.ToString()}%; T: {tech.module.DamageThermal.ToString()}%; E: {tech.module.DamageEm.ToString()}%;";
-            techValueReload.text = tech.module.Reload.ToString();
-            techValueTargetType.text = tech.module.TargetType.ToString();
+            techValueReload.text = tech.module.Reload.ToString() + (PlayerPrefs.GetString("Language", "Rus") == "Rus" ? " сек." : " sec.");
+            
+
+            if (tech.module.TargetType == 0)
+            {
+                techValueTargetType.text = "-";
+            }
+            if (tech.module.TargetType == 1)
+            {
+                techValueTargetType.text = $"{(PlayerPrefs.GetString("Language", "Rus") == "Rus" ? "земля" : "ground")}: true; {(PlayerPrefs.GetString("Language", "Rus") == "Rus" ? "воздух" : "air")}: false;";
+            }
+            if (tech.module.TargetType == 2)
+            {
+                techValueTargetType.text = $"{(PlayerPrefs.GetString("Language", "Rus") == "Rus" ? "земля" : "ground")}: false; {(PlayerPrefs.GetString("Language", "Rus") == "Rus" ? "воздух" : "air")}: true;";
+            }
+            if (tech.module.TargetType == 3)
+            {
+                techValueTargetType.text = $"{(PlayerPrefs.GetString("Language", "Rus") == "Rus" ? "земля" : "ground")}: true; {(PlayerPrefs.GetString("Language", "Rus") == "Rus" ? "воздух" : "air")}: true;";
+            }
+
             techValueGunCount.text = tech.module.GunCount.ToString();
 
-
-            techValuePlatformMass.color = tech.type == "Platform" ? activeColor : passiveColor;
-            techValueCorpsMass.color = tech.type == "Corps" ? activeColor : passiveColor;
+            techValueMass.color = (tech.type == "Platform" || tech.type == "Corps" || tech.type == "Weapon") ? activeColor : passiveColor;
+            techValueMaxMass.color = (tech.type == "Platform" || tech.type == "Corps") ? activeColor : passiveColor;
             techValueHorizontalSpeed.color = tech.type == "Platform" ? activeColor : passiveColor;
-            techValueVerticalSpeed.color = tech.type == "Platform" ? activeColor : passiveColor;
+            techValueVerticalSpeed.color = tech.type == "Corps" ? activeColor : passiveColor;
             techValueEnergy.color = activeColor;
             techValueRadius.color = tech.type == "Ballistic Computer" ? activeColor : passiveColor;
             techValueDamage.color = tech.type == "Weapon" ? activeColor : passiveColor;
@@ -92,8 +149,8 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
             techValueTargetType.color = tech.type == "Ballistic Computer" ? activeColor : passiveColor;
             techValueGunCount.color = tech.type == "Corps" ? activeColor : passiveColor;
 
-            techLabelPlatformMass.color = tech.type == "Platform" ? activeColor : passiveColor;
-            techLabelCorpsMass.color = tech.type == "Corps" ? activeColor : passiveColor;
+            techLabelMass.color = tech.type == "Platform" ? activeColor : passiveColor;
+            techLabelMaxMass.color = tech.type == "Corps" ? activeColor : passiveColor;
             techLabelHorizontalSpeed.color = tech.type == "Platform" ? activeColor : passiveColor;
             techLabelVerticalSpeed.color = tech.type == "Platform" ? activeColor : passiveColor;
             techLabelEnergy.color = activeColor;
@@ -124,8 +181,8 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
         else
         {
             techName.text = tech.name;
-            techValuePlatformMass.text = "-";
-            techValueCorpsMass.text = "-";
+            techValueMass.text = "-";
+            techValueMaxMass.text = "-";
             techValueHorizontalSpeed.text = "-";
             techValueVerticalSpeed.text = "-";
             techValueEnergy.text = "-";
@@ -136,8 +193,8 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
             techValueTargetType.text = "-";
             techValueGunCount.text = "-";
 
-            techValuePlatformMass.color = passiveColor;
-            techValueCorpsMass.color = passiveColor;
+            techValueMass.color = passiveColor;
+            techValueMaxMass.color = passiveColor;
             techValueHorizontalSpeed.color = passiveColor;
             techValueVerticalSpeed.color = passiveColor;
             techValueEnergy.color = passiveColor;
@@ -148,8 +205,8 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
             techValueTargetType.color = passiveColor;
             techValueGunCount.color = passiveColor;
 
-            techLabelPlatformMass.color = passiveColor;
-            techLabelCorpsMass.color = passiveColor;
+            techLabelMass.color = passiveColor;
+            techLabelMaxMass.color = passiveColor;
             techLabelHorizontalSpeed.color = passiveColor;
             techLabelVerticalSpeed.color = passiveColor;
             techLabelEnergy.color = passiveColor;
@@ -167,16 +224,19 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
         obj.SetActive(true);
     }
 
+    // Функция изучения выбранной технологии
     public void LearnOpenedTech()
     {
 
     }
 
+    // Функция выключения камеры
     public void cameraMovementOff()
     {
         interfaceSystem.cameraMovementOff();
     }
 
+    // Функция включения камеры
     public void cameraMovementOn()
     {
         interfaceSystem.cameraMovementOn();

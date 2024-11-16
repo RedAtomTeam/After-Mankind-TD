@@ -7,10 +7,10 @@ public class LoadingScreenSystem_TextController : MonoBehaviour
 {
     // Класс управления выводом текста во время загрузки.
 
-    [SerializeField] private List<string> strings;  // Список советов.
-    [SerializeField] private TextMeshProUGUI text;  // Ссылка на TextMeshProUGUI для вывода.
+    [SerializeField] List<string> strings;  // Список советов.
+    [SerializeField] TextMeshProUGUI text;  // Ссылка на TextMeshProUGUI для вывода.
 
-    private float time;      // Время текст.
+    float time;      // Время текст.
 
     public void SetTime(float setTime)
     {

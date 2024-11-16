@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TechnologiesNodesSystem : MonoBehaviour
 {
-
-    [SerializeField] private List<TechnologyNode> techNodesList;
-
-    [SerializeField] private GameMenuTechnologyTreeSystem gameMenuTechnologyTreeSystem;
+    // Надсистемы
+    [SerializeField] GameMenuTechnologyTreeSystem gameMenuTechnologyTreeSystem;
 
 
+    [SerializeField] List<TechnologyNode> techNodesList;
 
+    // Функция обновления всех нод
     public void FullUpdateTechTreeNodes()
     {
         foreach (TechnologyNode techNode in techNodesList)
@@ -19,6 +19,7 @@ public class TechnologiesNodesSystem : MonoBehaviour
         }
     }
 
+    // Функция открытия информации о технологии
     public void OpenTechInfo(Technology tech)
     {
         gameMenuTechnologyTreeSystem.OpenTechInfo(tech);

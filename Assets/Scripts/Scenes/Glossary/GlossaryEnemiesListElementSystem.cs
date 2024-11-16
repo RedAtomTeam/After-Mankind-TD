@@ -7,12 +7,17 @@ using UnityEngine.UI;
 
 public class GlossaryEnemiesListElementSystem : MonoBehaviour
 {
-    private GlossaryEnemiesListSystem glossaryEnemiesList;
+    // Класс элемента списка противников, который представляет конкретного противника
 
-    [SerializeField] private RawImage image_RawImage_Obj;
-    [SerializeField] private TextMeshProUGUI name_TMP_Obj;
-    private Enemy enemyScriptableObject;
+    // Надсистемы
+    GlossaryEnemiesListSystem glossaryEnemiesList;
 
+    // Внутренние переменные
+    [SerializeField] RawImage image_RawImage_Obj;
+    [SerializeField] TextMeshProUGUI name_TMP_Obj;
+    Enemy enemyScriptableObject;
+
+    // Функция инициализации
     public void Initialize(GlossaryEnemiesListSystem glossaryEnemiesListLink, Enemy enemySO)
     {
         glossaryEnemiesList = glossaryEnemiesListLink;
@@ -22,11 +27,13 @@ public class GlossaryEnemiesListElementSystem : MonoBehaviour
         name_TMP_Obj.text = enemyScriptableObject.name;
     }
 
+    // Функция выбора данной карточки противника
     public void SetSelected()
     {
         glossaryEnemiesList.SelectElement(gameObject.GetComponent<GlossaryEnemiesListElementSystem>());
     }
 
+    // Функция для получения информации о противнике
     public Enemy GetEnemySO()
     {
         return enemyScriptableObject;

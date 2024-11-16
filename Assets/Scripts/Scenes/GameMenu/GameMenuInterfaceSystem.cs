@@ -4,43 +4,51 @@ using UnityEngine;
 
 public class GameMenuInterfaceSystem : MonoBehaviour
 {
-    [SerializeField] private GameMenuCameraCanvasSystem gameMenuCameraCanvasSystem;
+    // Надсистемы
+    [SerializeField] GameMenuCameraCanvasSystem gameMenuCameraCanvasSystem;
 
-    [SerializeField] private GameMenuLevelInfoSystem gameMenuLevelInfoSystem;
-    [SerializeField] private GameMenuTechnologyInfoSystem gameMenuTechnologyInfoSystem;
+    // Подсистемы
+    [SerializeField] GameMenuLevelInfoSystem gameMenuLevelInfoSystem;
+    [SerializeField] GameMenuTechnologyInfoSystem gameMenuTechnologyInfoSystem;
 
-
+    // Функция включения камеры
     public void cameraMovementOn()
     {
         gameMenuCameraCanvasSystem.cameraMovementOn();
     }
 
+    // Функция выключения камеры
     public void cameraMovementOff()
     {
         gameMenuCameraCanvasSystem.cameraMovementOff();
     }
 
+    // Функция запуска уровня
     public void StartLevel(int ID)
     {
 
     }
 
+    // Функция открытия дерева технологий
     public void OpenTechTreeTab()
     {
         gameMenuCameraCanvasSystem.OpenTechTreeTab();
     }
 
+    // Функция открытия карты уровней
     public void OpenMapTab()
     {
         gameMenuCameraCanvasSystem.OpenMapTab();
     }
 
+    // Функция открытия информации об уровне
     public void OpenLevelInfo(Level level)
     {
         cameraMovementOff();
         gameMenuLevelInfoSystem.OpenLevelInfo(level);
     }
 
+    // Функция открытия информации о технологии
     public void OpenTechInfo(Technology tech)
     {
         cameraMovementOff();

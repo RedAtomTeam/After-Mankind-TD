@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class GlossaryController : MonoBehaviour
 {
-    [SerializeField] private GlossaryCameraSystem glossaryCamera;
-    [SerializeField] private GlossaryInterfaceSystem glossaryInterface;
-    [SerializeField] private LoadingScreenSystem_MainScript loadingScreen;
+    // Контроллер глоссария
 
+    // Подсистемы
+    [SerializeField] GlossaryCameraSystem glossaryCamera;
+    [SerializeField] GlossaryInterfaceSystem glossaryInterface;
+    [SerializeField] LoadingScreenSystem_MainScript loadingScreen;
 
+    // Функция загрузки сцены
     public void LoadScene(string sceneName)
     {
         loadingScreen.LoadScene(sceneName);

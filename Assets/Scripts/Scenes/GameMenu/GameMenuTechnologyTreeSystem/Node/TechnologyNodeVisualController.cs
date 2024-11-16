@@ -6,29 +6,33 @@ using UnityEngine.UI;
 
 public class TechnologyNodeVisualController : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private TechnologyNode techNode;
+    // Надсистемы
+    [SerializeField] TechnologyNode techNode;
 
-    [SerializeField] private RawImage nodeObject;
+    [SerializeField] RawImage nodeObject;
+    [SerializeField] Color passedColor;
+    [SerializeField] Color openedColor;
+    [SerializeField] Color closedColor;
 
-    [SerializeField] private Color passedColor;
-    [SerializeField] private Color openedColor;
-    [SerializeField] private Color closedColor;
-
+    // Функция изучения
     public void SetLearned()
     {
         nodeObject.color = passedColor;
     }
 
+    // Функция открытия
     public void SetOpened()
     {
         nodeObject.color = openedColor;
     }
 
+    // Функция закрытия
     public void SetClosed()
     {
         nodeObject.color = closedColor;
     }
 
+    // Функция отслеживания нажатия
     void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
     {
         if (Input.GetMouseButtonUp(0))

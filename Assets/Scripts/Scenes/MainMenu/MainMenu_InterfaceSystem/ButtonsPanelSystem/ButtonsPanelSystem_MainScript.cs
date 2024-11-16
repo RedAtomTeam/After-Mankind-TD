@@ -5,40 +5,19 @@ using UnityEngine;
 public class ButtonsPanelSystem_MainScript : MonoBehaviour
 {
     // Надсистемы:
-    [SerializeField] private MainMenuInterfaceSystem_MainScript mainMenuInterfaceSystem_MainScript;     // Система интерфейса.
+    [SerializeField] MainMenuInterfaceSystem_MainScript mainMenuInterfaceSystem_MainScript;     // Система интерфейса.
 
 
     // Подсистемы:
 
 
     // Внутренние переменные:
-    [SerializeField] private GameObject Buttons_Obj;            // Объект. 
-    [SerializeField] private List<string> techNameList = new List<string>();    // Список технологий.
-    [SerializeField] private List<string> levelNameList = new List<string>();   // Список уровней.
+    [SerializeField] GameObject Buttons_Obj;  // Объект. 
 
     // Функция запуска новой игры.
     public void NewGameStart()
     {
         LoadScene("GameMenu");
-
-
-        //foreach (string techName in techNameList)
-        //{
-        //    PlayerPrefs.SetInt(techName, 0);
-        //}
-
-        //foreach (string levelName in levelNameList)
-        //{
-        //    PlayerPrefs.SetInt($"{levelName}_Status", 0);
-        //    PlayerPrefs.SetString($"{levelName}_Time", "00:00:0000");
-        //    PlayerPrefs.SetString($"{levelName}_Defence", "00");
-
-        //}
-        //PlayerPrefs.SetInt($"{levelNameList[0]}_Status", 1);
-
-        //PlayerPrefs.SetInt("techBalance", 400);
-
-        //mainMenuInterfaceSystem_MainScript.LoadScene("GameMenu");
     }
 
     // Функция открытия панели.

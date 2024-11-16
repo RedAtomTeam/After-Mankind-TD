@@ -8,9 +8,9 @@ public class MainMenuInterfaceSystem_MainScript : MonoBehaviour
     [SerializeField] MainMenuController mainMenuController;
 
     // Подсистемы:
-    [SerializeField] private ButtonsPanelSystem_MainScript buttonsPanelSystem_MainScript;   // Система панели кнопок.
-    [SerializeField] private SettingsSystem_MainScript settingsSystem_MainScript;           // Система окна настроек.
-    [SerializeField] private SavesSystem_MainScript savesSystem_MainScript;                 // Система окна сохранений
+    [SerializeField] ButtonsPanelSystem_MainScript buttonsPanelSystem_MainScript;   // Система панели кнопок.
+    [SerializeField] SettingsSystem_MainScript settingsSystem_MainScript;           // Система окна настроек.
+    [SerializeField] SavesSystem_MainScript savesSystem_MainScript;                 // Система окна сохранений
 
     // Функция обновления громкости.
     public void UpdateSoundsVolume()

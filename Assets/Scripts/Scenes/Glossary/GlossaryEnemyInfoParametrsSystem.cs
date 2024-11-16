@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class GlossaryEnemyInfoParametrsSystem : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI Type_ValueTMP_Obj;
-    [SerializeField] private TextMeshProUGUI HealthPoint_ValueTMP_Obj;
-    [SerializeField] private TextMeshProUGUI Kinetic_ValueTMP_Obj;
-    [SerializeField] private TextMeshProUGUI Thermal_ValueTMP_Obj;
-    [SerializeField] private TextMeshProUGUI EM_ValueTMP_Obj;
-    [SerializeField] private TextMeshProUGUI Speed_ValueTMP_Obj;
-    [SerializeField] private TextMeshProUGUI Damage_ValueTMP_Obj;
-    [SerializeField] private TextMeshProUGUI Treat_ValueTMP_Obj;
+    [SerializeField] TextMeshProUGUI Type_ValueTMP_Obj;
+    [SerializeField] TextMeshProUGUI HealthPoint_ValueTMP_Obj;
+    [SerializeField] TextMeshProUGUI Kinetic_ValueTMP_Obj;
+    [SerializeField] TextMeshProUGUI Thermal_ValueTMP_Obj;
+    [SerializeField] TextMeshProUGUI EM_ValueTMP_Obj;
+    [SerializeField] TextMeshProUGUI Speed_ValueTMP_Obj;
+    [SerializeField] TextMeshProUGUI Damage_ValueTMP_Obj;
+    [SerializeField] TextMeshProUGUI Treat_ValueTMP_Obj;
 
     public void SetEnemiesParametrs(Enemy enemySO)
     {

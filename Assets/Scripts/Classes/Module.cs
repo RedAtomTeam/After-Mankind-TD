@@ -16,8 +16,8 @@ public class Module : ScriptableObject
     public int levelUpCost;
     public string imageName;
 
-    public float PlatformMass;
-    public float CorpsMass;
+    public float mass;
+    public float maxMass;
     public float HorizontalSpeed;
     public float VerticalSpeed;
     public float Energy;

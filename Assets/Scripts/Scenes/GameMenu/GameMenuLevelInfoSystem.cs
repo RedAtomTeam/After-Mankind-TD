@@ -6,16 +6,17 @@ using UnityEngine.UI;
 
 public class GameMenuLevelInfoSystem : MonoBehaviour
 {
-    [SerializeField] private GameMenuInterfaceSystem interfaceSystem;
+    // Надсистемы
+    [SerializeField] GameMenuInterfaceSystem interfaceSystem;
 
-    [SerializeField] private TextMeshProUGUI levelName;
-    [SerializeField] private RawImage levelImage;
-    [SerializeField] private TextMeshProUGUI levelDescription;
+    // Внутренние переменные
+    [SerializeField] TextMeshProUGUI levelName;
+    [SerializeField] RawImage levelImage;
+    [SerializeField] TextMeshProUGUI levelDescription;
+    [SerializeField] GameObject Obj;
+    Level targetLevel;
 
-    [SerializeField] private GameObject Obj;
-
-    private Level targetLevel;
-
+    // Функция открытия информации об уровне
     public void OpenLevelInfo(Level level)
     {
         string language = PlayerPrefs.GetString("Language", "Rus");
@@ -41,16 +42,19 @@ public class GameMenuLevelInfoSystem : MonoBehaviour
         Obj.SetActive(true);
     }
 
+    // Функция загрузки уровня
     public void StartLevel()
     {
 
     }
 
+    // Функция выключения камеры
     public void cameraMovementOff()
     {
         interfaceSystem.cameraMovementOff();
     }
 
+    // Функция включения камеры
     public void cameraMovementOn()
     {
         interfaceSystem.cameraMovementOn();

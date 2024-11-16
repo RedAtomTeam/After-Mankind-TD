@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class TechnologyLinkVisualController : MonoBehaviour
 {
     [SerializeField] private Image lineObject;
-
     [SerializeField] private Color passedColor;
     [SerializeField] private Color openedColor;
     [SerializeField] private Color closedColor;
