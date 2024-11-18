@@ -4,17 +4,30 @@ using UnityEngine;
 
 public class GameMenuController : MonoBehaviour
 {
-    // Подсистемы 
+    GameManager gameManager;
 
+    // Подсистемы 
     [SerializeField] GameMenuCameraCanvasSystem cameraCanvasSystem;
     [SerializeField] GameMenuCameraSystem cameraSystem;
     [SerializeField] GameMenuLevelsMapSystem levelsMapSystem;
     [SerializeField] GameMenuTechnologyTreeSystem technologyTreeSystem;
     [SerializeField] LoadingScreenSystem_MainScript loadingScreenSystem;
-    
-    
+
+    public void LoadScene(string sceneName)
+    {
+        loadingScreenSystem.LoadScene(sceneName);
+    }
+
+    public void UpdateLearnPoints()
+    {
+        int points = gameManager.playerGameData.balanceData.Balance;
+        cameraCanvasSystem.UpdateLearnPoints(points);
+    }
+
     private void Start()
     {
+        gameManager = GameManager.Instance;
+
         FullUpdateLevelMap();
         OpenMapTab();
         FullUpdateTechTree();
@@ -61,7 +74,7 @@ public class GameMenuController : MonoBehaviour
     public void OpenMapTab()
     {
         cameraSystem.SetPositionOnStartPosition();
-        cameraSystem.ChangeSpriteRenderer();
+        cameraSystem.ChooseSpriteRendererMap();
         levelsMapSystem.OpenMapTab();
         CloseTechTreeTab();
     }
@@ -76,7 +89,7 @@ public class GameMenuController : MonoBehaviour
     public void OpenTechTreeTab()
     {
         cameraSystem.SetPositionOnStartPosition();
-        cameraSystem.ChangeSpriteRenderer();
+        cameraSystem.ChooseSpriteRendererTech();
         technologyTreeSystem.OpenTechTreeTab();
         CloseMapTab();
     }

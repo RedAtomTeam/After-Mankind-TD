@@ -12,4 +12,5 @@ public class Level : ScriptableObject
     public string descriptionEng;
     public string imageName;
     public List<Level> levels;
+    public int status;
 }

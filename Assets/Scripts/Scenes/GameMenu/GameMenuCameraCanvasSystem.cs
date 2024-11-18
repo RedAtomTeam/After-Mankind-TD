@@ -11,6 +11,28 @@ public class GameMenuCameraCanvasSystem : MonoBehaviour
     [SerializeField] GameMenuInterfaceSystem gameMenuInterfaceSystem;
 
 
+    public void LoadScene(string sceneName)
+    {
+        gameMenuController.LoadScene(sceneName);
+    }
+
+    // Функция обновления карты уровней
+    public void FullUpdateLevelMap()
+    {
+        gameMenuController.FullUpdateLevelMap();
+    }
+
+    // Функция обновления дерева технологий
+    public void FullUpdateTechTree()
+    {
+        gameMenuController.FullUpdateTechTree();
+    }
+
+    public void UpdateLearnPoints(int points)
+    {
+        gameMenuInterfaceSystem.UpdateLearnPoints(points);
+    }
+
     // Функция включения камеры
     public void cameraMovementOn()
     {

@@ -14,14 +14,6 @@ public class SaveNode : MonoBehaviour
     public SavesSystem_MainScript savesSystem_MainScript;     // Система загрузки списка сохранений.
 
 
-    // Системы одного уровня:
-
-
-
-    // Подсистемы:
-
-
-
 
     // Внутренние переменные:
     [SerializeField] private TextMeshProUGUI nameTMP;   // Ссылка на TextMeshProUGUI для названия сохранения.

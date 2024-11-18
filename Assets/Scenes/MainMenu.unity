@@ -2005,7 +2005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuInterfaceSystem_MainScreen: {fileID: 1640045780}
   Saves_Obj: {fileID: 613756620}
-  saveTemplate: {fileID: 0}
+  saveTemplate: {fileID: 785544061167365643, guid: 13a9381f3d9cc1f45b96b60f7133fabb, type: 3}
   content: {fileID: 874486546}
   currentSave: {fileID: 0}
   techNameList: []
@@ -5031,7 +5031,7 @@ MonoBehaviour:
     m_Top: 10
     m_Bottom: 10
   m_ChildAlignment: 1
-  m_Spacing: -410
+  m_Spacing: -300
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -9226,6 +9226,13 @@ MonoBehaviour:
       Balance: 0
     levels: []
     technologies: []
+    dateAndTimeData:
+      day: 0
+      month: 0
+      year: 0
+      seconds: 0
+      minutes: 0
+      hours: 0
 --- !u!4 &1627250817
 Transform:
   m_ObjectHideFlags: 0
@@ -10256,8 +10263,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuInterfaceSystem_MainScript: {fileID: 1640045780}
   Buttons_Obj: {fileID: 1382444393}
-  techNameList: []
-  levelNameList: []
 --- !u!1 &1798332008
 GameObject:
   m_ObjectHideFlags: 0

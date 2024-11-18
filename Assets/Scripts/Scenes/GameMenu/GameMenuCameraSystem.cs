@@ -30,16 +30,10 @@ public class GameMenuCameraSystem : MonoBehaviour
     public float wheelSense;
 
     // Функция для переключения между картами для камеры
-    public void ChangeSpriteRenderer()
+
+    public void ChooseSpriteRendererTech()
     {
-        if (mapRenderer == worldMapTabRenderer)
-        {
-            mapRenderer = technologiesTabRenderer;
-        }
-        else
-        {
-            mapRenderer = worldMapTabRenderer;
-        }
+        mapRenderer = technologiesTabRenderer;
 
         cam.orthographicSize = defaultCameraSize;
 
@@ -50,6 +44,19 @@ public class GameMenuCameraSystem : MonoBehaviour
         mapMaxY = mapRenderer.transform.position.y + mapRenderer.bounds.size.y / 2f;
     }
 
+    public void ChooseSpriteRendererMap()
+    {
+        mapRenderer = worldMapTabRenderer;
+
+        cam.orthographicSize = defaultCameraSize;
+
+        mapMinX = mapRenderer.transform.position.x - mapRenderer.bounds.size.x / 2f;
+        mapMaxX = mapRenderer.transform.position.x + mapRenderer.bounds.size.x / 2f;
+
+        mapMinY = mapRenderer.transform.position.y - mapRenderer.bounds.size.y / 2f;
+        mapMaxY = mapRenderer.transform.position.y + mapRenderer.bounds.size.y / 2f;
+    }
+    
     // При загрузке сцены рассчитываем координаты карты.
     private void Awake()
     {

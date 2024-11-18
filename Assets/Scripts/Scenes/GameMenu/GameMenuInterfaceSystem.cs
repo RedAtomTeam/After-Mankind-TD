@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameMenuInterfaceSystem : MonoBehaviour
@@ -10,6 +11,31 @@ public class GameMenuInterfaceSystem : MonoBehaviour
     // Подсистемы
     [SerializeField] GameMenuLevelInfoSystem gameMenuLevelInfoSystem;
     [SerializeField] GameMenuTechnologyInfoSystem gameMenuTechnologyInfoSystem;
+
+    [SerializeField] TextMeshProUGUI learnPointTMP;
+
+
+    public void LoadScene(string sceneName)
+    {
+        gameMenuCameraCanvasSystem.LoadScene(sceneName);
+    }
+
+    // Функция обновления карты уровней
+    public void FullUpdateLevelMap()
+    {
+        gameMenuCameraCanvasSystem.FullUpdateLevelMap();
+    }
+
+    // Функция обновления дерева технологий
+    public void FullUpdateTechTree()
+    {
+        gameMenuCameraCanvasSystem.FullUpdateTechTree();
+    }
+
+    public void UpdateLearnPoints(int points)
+    {
+        learnPointTMP.text = points.ToString();
+    }
 
     // Функция включения камеры
     public void cameraMovementOn()

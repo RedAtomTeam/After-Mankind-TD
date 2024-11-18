@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameMenuTechnologyInfoSystem : MonoBehaviour
 {   
@@ -60,6 +61,8 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
 
     [SerializeField] GameObject obj;
 
+    [SerializeField] RawImage techImage;
+
     Technology targetTech = null;
 
     // Загрузка менеджера сохранений
@@ -72,6 +75,11 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
     public void LoadTechInfo(Technology tech)
     {
         targetTech = tech;
+
+        if (targetTech.imageName != "")
+        {
+            techImage.texture = (Texture2D)Resources.Load(targetTech.imageName);
+        }
 
         foreach (TechnologyData technology in gameManager.playerGameData.technologies) 
         {
@@ -225,9 +233,46 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
     }
 
     // Функция изучения выбранной технологии
-    public void LearnOpenedTech()
+    public void LearnOrLevelUpOpenedTech()
     {
+        print(targetTech.ID);
+        foreach (TechnologyData technology in gameManager.playerGameData.technologies)
+        {
+            if (targetTech.ID == technology.ID)
+            {
+                print(targetTech.ID);
+                if (technology.status == 1)
+                {
+                    if (targetTech.openCost <= gameManager.playerGameData.balanceData.Balance)
+                    {
+                        print(targetTech.ID);
+                        gameManager.playerGameData.balanceData.Balance -= targetTech.openCost;
 
+                        technology.status = 2;
+                        technology.level = 1;
+
+                        gameManager.FullUpdateTechnologyData();
+                        interfaceSystem.FullUpdateTechTree();
+                        LoadTechInfo(targetTech);
+
+
+                    }
+                }
+                else
+                {
+                    if (technology.status == 2)
+                    {
+                        if (targetTech.levelUpCost <= gameManager.playerGameData.balanceData.Balance)
+                        {
+                            gameManager.playerGameData.balanceData.Balance -= targetTech.levelUpCost;
+                            technology.level += 1;
+                            LoadTechInfo(targetTech);
+                        }
+                    }
+                }
+                break;
+            }
+        }
     }
 
     // Функция выключения камеры

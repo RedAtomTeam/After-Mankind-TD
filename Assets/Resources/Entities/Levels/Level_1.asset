@@ -21,3 +21,4 @@ MonoBehaviour:
   imageName: Level 1 image
   levels:
   - {fileID: 11400000, guid: afd7d0f7fdcdc7d479c75f374375535a, type: 2}
+  status: 1

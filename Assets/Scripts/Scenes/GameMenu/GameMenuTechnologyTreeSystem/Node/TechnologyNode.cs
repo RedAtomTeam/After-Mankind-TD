@@ -13,7 +13,7 @@ public class TechnologyNode : MonoBehaviour
     // Подсистемы
     [SerializeField] TechnologyNodeVisualController visualController;
 
-    [SerializeField] Technology technologyEntity;
+    [SerializeField] public Technology technologyEntity;
     [SerializeField] int status;
 
     private void Awake()

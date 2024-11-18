@@ -17,4 +17,10 @@ public class Technology : ScriptableObject
     public int levelUpCost;
     public List<Technology> prevTech;
     public List<Technology> nextTech;
+
+    public string iconName;
+    public string imageName;
+
+    public int level;
+    public int status;
 }

@@ -14,6 +14,14 @@ public class TechnologyNodeVisualController : MonoBehaviour, IPointerClickHandle
     [SerializeField] Color openedColor;
     [SerializeField] Color closedColor;
 
+    private void Awake()
+    {
+        if (techNode.technologyEntity.iconName != "")
+        {
+            nodeObject.texture = (Texture2D)Resources.Load(techNode.technologyEntity.iconName);
+        }
+    }
+
     // Функция изучения
     public void SetLearned()
     {
