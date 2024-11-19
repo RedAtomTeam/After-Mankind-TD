@@ -16,15 +16,15 @@ public class SaveNode : MonoBehaviour
 
 
     // ¬нутренние переменные:
-    [SerializeField] private TextMeshProUGUI nameTMP;   // —сылка на TextMeshProUGUI дл€ названи€ сохранени€.
+    [SerializeField] TextMeshProUGUI nameTMP;   // —сылка на TextMeshProUGUI дл€ названи€ сохранени€.
     public string Name                                  // —войство дл€ изменени€ названи€ сохранени€.
     {
         get { return nameTMP.text; }
         private set { nameTMP.text = value; }
     }
 
-    [SerializeField] private TextMeshProUGUI dateTMP;   // —сылка на TextMeshProUGUI дл€ изменени€ даты сохранени€.
-    [SerializeField] private TextMeshProUGUI timeTMP;   // —сылка на TextMeshProUGUI дл€ изменени€ времени сохранени€.
+    [SerializeField] TextMeshProUGUI dateTMP;   // —сылка на TextMeshProUGUI дл€ изменени€ даты сохранени€.
+    [SerializeField] TextMeshProUGUI timeTMP;   // —сылка на TextMeshProUGUI дл€ изменени€ времени сохранени€.
 
     
 

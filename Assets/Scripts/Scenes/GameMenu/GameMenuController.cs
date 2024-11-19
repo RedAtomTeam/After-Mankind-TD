@@ -31,6 +31,7 @@ public class GameMenuController : MonoBehaviour
         FullUpdateLevelMap();
         OpenMapTab();
         FullUpdateTechTree();
+        UpdateLearnPoints();
     }
 
     // Функция включения движения камеры

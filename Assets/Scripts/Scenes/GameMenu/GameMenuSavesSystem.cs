@@ -12,7 +12,6 @@ public class GameMenuSavesSystem : MonoBehaviour
 
     // Внутренние переменные:
     [SerializeField] GameObject Saves_Obj;                                  // Объект.
-    private List<string> savesNames = new List<string>();                   // Список всех имён сохранений.
     [SerializeField] GameObject saveTemplate;                               // Ссылка на шаблон объекта сохранения.
     [SerializeField] GameObject content;                                    // Ссылка на пространство для размещения шаблонов.
     [SerializeField] TMP_InputField inputField;
@@ -45,20 +44,15 @@ public class GameMenuSavesSystem : MonoBehaviour
         {
             DestroyImmediate(content.transform.GetChild(0).gameObject);
         }
-        savesNames.Clear();
 
         string saveFilePath = Application.persistentDataPath;
 
         if (Directory.Exists(saveFilePath))
         {
-            print("Saves File Search...");
-
             var info = new DirectoryInfo(saveFilePath);
             var files = info.GetFiles();
             foreach (var file in files)
             {
-                print(file.Name);
-
                 //Создаём элемент списка.
                 GameObject saveEl = Instantiate(saveTemplate, content.transform.position, content.transform.rotation);
                 // Устанавливаем элементу ссылки на управляющие кнопки.
@@ -78,7 +72,6 @@ public class GameMenuSavesSystem : MonoBehaviour
 
                 saveEl.GetComponent<SaveNode>().SetDataOnSaveNode(file.Name, saveDate, saveTime);
             }
-
         }
         else
         {
@@ -86,6 +79,7 @@ public class GameMenuSavesSystem : MonoBehaviour
         }
     }
 
+    // Функция сохранения, которая цепляется на кнопку
     public void Save()
     {
         bool result = SaveSave();
@@ -99,6 +93,7 @@ public class GameMenuSavesSystem : MonoBehaviour
         }
     }
 
+    // Функция сохранения
     public bool SaveSave()
     {
         string saveFilePath = Application.persistentDataPath;

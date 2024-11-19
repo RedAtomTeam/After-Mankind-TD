@@ -86,50 +86,6 @@ public class SavesSystem_MainScript : MonoBehaviour
         {
             print("saveFilePath no exist");
         }
-
-        // В случае, если в памяти существует список сохранённых имён - заполняем список нужным префабом,
-        // устанавливая каждому соответсвующую информацию.
-        //if (PlayerPrefs.HasKey("savesNames"))
-        //{
-        //    print(PlayerPrefs.GetString("savesNames"));
-        //    string savesNamesString = PlayerPrefs.GetString("savesNames");
-
-        //    foreach (string saveName in savesNamesString.Split(new char[] { ' ' }))
-        //    {
-        //        if (saveName != "")
-        //        {
-        //            savesNames.Add(saveName);
-
-        //            // Создаём элемент списка.
-        //            GameObject save = Instantiate(saveTemplate, content.transform.position, content.transform.rotation);
-
-        //            // Устанавливаем элементу ссылки на управляющие кнопки.
-        //            save.GetComponent<SaveNode>().savesSystem_MainScript = gameObject.GetComponent<SavesSystem_MainScript>();
-
-        //            // Устанавливаем ему родительский объект.
-        //            save.transform.SetParent(content.transform, false);
-
-        //            // Заполняем его.
-        //            string saveDate = PlayerPrefs.GetString($"{saveName}_date");
-        //            string saveTime = PlayerPrefs.GetString($"{saveName}_time");
-        //            save.GetComponent<SaveNode>().SetDataOnSaveNode(saveName, saveDate, saveTime);
-        //        }
-        //    }
-
-        //    content.GetComponent<RectTransform>().rect.Set(
-        //        content.GetComponent<RectTransform>().rect.x,
-        //        content.GetComponent<RectTransform>().rect.y,
-        //        content.GetComponent<RectTransform>().rect.width,
-        //        110 * (savesNames.Count < 2 ? 2 : savesNames.Count));
-        //}
-        //else
-        //{
-        //    print("Saves list is empty");
-        //}
-
-        //content.GetComponent<RectTransform>().sizeDelta = new Vector2(
-        //    content.GetComponent<RectTransform>().rect.width,
-        //    110 * (savesNames.Count < 2 ? 2 : savesNames.Count));
     }
 
 

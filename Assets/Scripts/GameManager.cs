@@ -8,13 +8,13 @@ using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
+    // Менеджер игровых данных
+
     public static GameManager Instance; // Статическая переменная для доступа
 
     Level[] allLevelsEntities;
     Technology[] allTechnologiesEntities;
 
-    private Dictionary<int, int> levelsData = new Dictionary<int, int>();
-    private Dictionary<int, int> technologiesData = new Dictionary<int, int>();
 
     public GameData playerGameData;
 
@@ -39,21 +39,18 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < allLevelsEntities.Length; i++) 
         {
-            levelsData.Add(allLevelsEntities[i].ID, 0);
-
             playerGameData.levels[i].ID = allLevelsEntities[i].ID;
             playerGameData.levels[i].status = allLevelsEntities[i].status;
         }
         for (int i = 0; i < allTechnologiesEntities.Length; i++)
         {
-            technologiesData.Add(allTechnologiesEntities[i].ID, 0);
-
             playerGameData.technologies[i].ID = allTechnologiesEntities[i].ID;
             playerGameData.technologies[i].level = allTechnologiesEntities[i].level;
             playerGameData.technologies[i].status = allTechnologiesEntities[i].status;
         }
     }
 
+    // Функция сохранения данных в файл
     public void SaveGame(string fileName)
     {
         DateTime dataEndTimeNow = DateTime.Now;
@@ -72,9 +69,9 @@ public class GameManager : MonoBehaviour
         {
             formatter.Serialize(stream, playerGameData);
         }
-        Debug.Log("Игра сохранена.");
     }
 
+    // Функция загрузки данных из файла
     public void LoadGame(string fileName)
     {
         string saveFilePath = Application.persistentDataPath + "\\" + fileName;
@@ -85,10 +82,10 @@ public class GameManager : MonoBehaviour
             {
                 playerGameData = formatter.Deserialize(stream) as GameData;
             }
-            Debug.Log("Игра загружена.");
         }
     }
 
+    // Функция полного обновления данных дерева технологий
     public void FullUpdateTechnologyData()
     {
         foreach (TechnologyData technology in playerGameData.technologies)
@@ -120,6 +117,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Функция полного обновления данных карты уровней
     public void FullUpdateLevelMapData()
     {
         foreach (LevelData level in playerGameData.levels)
@@ -156,6 +154,7 @@ public class GameManager : MonoBehaviour
     }
 }
 
+// Класс даты и времени
 [System.Serializable]
 public class DateAndTimeData
 {
@@ -168,12 +167,14 @@ public class DateAndTimeData
     public int hours;
 }
 
+// Класс баланса
 [System.Serializable]
 public class BalanceData
 {
     public int Balance;
 }
 
+// Класс уровня
 [System.Serializable]
 public class LevelData
 {
@@ -181,6 +182,7 @@ public class LevelData
     public int status;
 }
 
+// Класс технологий
 [System.Serializable]
 public class TechnologyData
 {
@@ -189,12 +191,14 @@ public class TechnologyData
     public int status;
 }
 
+// Класс флагов
 [System.Serializable]
 public class Flags
 {
     public Dictionary<string, bool> flags;
 }
 
+// Класс данных об игре
 [System.Serializable]
 public class GameData
 {
