@@ -30,4 +30,9 @@ public class SoundEffectsSystem : MonoBehaviour
             transform.GetChild(i).GetComponent<AudioSource>().volume = volume;
         }
     }
+
+    public void MakeButtonSound()
+    {
+        transform.GetChild(0).GetComponent<AudioSource>().Play();
+    }
 }

@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class SettingsSystem_MainScript : MonoBehaviour
 {
@@ -20,7 +23,7 @@ public class SettingsSystem_MainScript : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;             // Ссылка на выпадающий список разрешения экрана.
     public TMP_Dropdown qualityDropdown;                // Ссылка на выпадающий список качества.
     public TMP_Dropdown languageDropdown;               // Ссылка на выпадающий список языков.
-    public Toggle fullscreenToggle;                     // Ссылка на переключатель полноэкранного режима.
+    public UnityEngine.UI.Toggle fullscreenToggle;                     // Ссылка на переключатель полноэкранного режима.
 
     private void Start()
     {
@@ -118,7 +121,38 @@ public class SettingsSystem_MainScript : MonoBehaviour
         PlayerPrefs.SetInt("fullscreenPreference", Convert.ToInt32(fullscreenToggle.isOn));
         PlayerPrefs.SetInt("volumePreference", soundtracksVolumeSlider.GetVolume());
         PlayerPrefs.SetInt("effectsVolumePreference", soundEffectsVolumeSlider.GetVolume());
-        PlayerPrefs.SetInt("languagePreference", languageDropdown.value);
+        PlayerPrefs.SetString("Language", languageDropdown.options[languageDropdown.value].text);
+    }
+
+    private void Update()
+    {
+        UpdateQualityLanguage();
+    }
+
+    public void UpdateQualityLanguage()
+    {
+
+        qualityDropdown.options[0].text = PlayerPrefs.GetString("Language") == "Русский" ? "Высокое" : "High";
+        qualityDropdown.options[1].text = PlayerPrefs.GetString("Language") == "Русский" ? "Среднее" : "Medium";
+        qualityDropdown.options[2].text = PlayerPrefs.GetString("Language") == "Русский" ? "Низкое" : "Low";
+
+        qualityDropdown.captionText.text = qualityDropdown.options[qualityDropdown.value].text;
+
+    }
+
+    public void SetLanguage()
+    {
+        string selectedLang = languageDropdown.options[languageDropdown.value].text;
+        print("HUITAPOCHEMUTOVIPOLNOLAS");
+        switch (selectedLang)
+        {
+            case "Русский":
+                PlayerPrefs.SetString("Language", "Русский");
+                break;
+            case "English":
+                PlayerPrefs.SetString("Language", "English");
+                break;
+        }
     }
 
     // Функция загрузки настроек.
@@ -130,7 +164,7 @@ public class SettingsSystem_MainScript : MonoBehaviour
 
         foreach (Resolution res in Screen.resolutions)
         {
-            if (res.width >= 1200 && res.height >= 800)
+            if (res.width >= 1600 && res.height >= 1000)
             {
                 resolutions.Add(res);
             }
@@ -150,7 +184,7 @@ public class SettingsSystem_MainScript : MonoBehaviour
         // Если в памяти нет настроек качества - устанавливается значение по умолчанию.
         // После устанавливается значение качества в панеле настроек и в игре. 
         if (!PlayerPrefs.HasKey("qualityPreference"))
-            PlayerPrefs.SetInt("qualityPreference", 3);
+            PlayerPrefs.SetInt("qualityPreference", 0);
         int qualityIndex = PlayerPrefs.GetInt("qualityPreference");
         qualityDropdown.value = qualityIndex;
         SetQuality(qualityIndex);
@@ -198,9 +232,18 @@ public class SettingsSystem_MainScript : MonoBehaviour
 
         // Если в памяти нет настроек языка - устанавливается значение по умолчанию.
         // После устанавливается язык в панеле настроек и в игре.
-        if (PlayerPrefs.HasKey("languagePreference"))
-            PlayerPrefs.SetInt("languagePreference", 0);
-        int languageIndex = PlayerPrefs.GetInt("languagePreference");
-        languageDropdown.value = languageIndex;
+        if (!PlayerPrefs.HasKey("Language"))
+        {
+            PlayerPrefs.SetString("Language", "Русский");
+        }
+        for (int i = 0; i < languageDropdown.options.Count; i++)
+        {
+            if (languageDropdown.options[i].text == PlayerPrefs.GetString("Language"))
+            {
+                languageDropdown.value = i;
+                break;
+            }
+        }
+
     }
 }

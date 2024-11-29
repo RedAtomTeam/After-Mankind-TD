@@ -16,7 +16,18 @@ public class GlossaryEnemyInfoParametrsSystem : MonoBehaviour
 
     public void SetEnemiesParametrs(Enemy enemySO)
     {
-        Type_ValueTMP_Obj.text = enemySO.type;
+        string type = "Error";
+        
+        if (enemySO.type == 0)
+        {
+            type = PlayerPrefs.GetString("Language") == "Русский" ? "Наземный" : "Ground";
+        }
+        if (enemySO.type == 1)
+        {
+            type = PlayerPrefs.GetString("Language") == "Русский" ? "Воздушный" : "Air";
+        }
+
+        Type_ValueTMP_Obj.text = type;
         HealthPoint_ValueTMP_Obj.text = enemySO.healthPoints.ToString();
         Kinetic_ValueTMP_Obj.text = enemySO.defenseKinetic.ToString();
         Thermal_ValueTMP_Obj.text = enemySO.defenseThermal.ToString();

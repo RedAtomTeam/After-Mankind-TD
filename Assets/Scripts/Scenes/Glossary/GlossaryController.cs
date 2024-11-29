@@ -16,4 +16,9 @@ public class GlossaryController : MonoBehaviour
     {
         loadingScreen.LoadScene(sceneName);
     }
+
+    public void MakeButtonSound()
+    {
+        glossaryCamera.MakeButtonSound();
+    }
 }

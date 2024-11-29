@@ -22,4 +22,9 @@ public class GlossaryInterfaceSystem : MonoBehaviour
     {
         controller.LoadScene(sceneName);
     }
+
+    public void MakeButtonSound()
+    {
+        controller.MakeButtonSound();
+    }
 }

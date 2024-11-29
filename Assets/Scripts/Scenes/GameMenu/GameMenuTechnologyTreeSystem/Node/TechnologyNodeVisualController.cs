@@ -9,35 +9,39 @@ public class TechnologyNodeVisualController : MonoBehaviour, IPointerClickHandle
     // Надсистемы
     [SerializeField] TechnologyNode techNode;
 
-    [SerializeField] RawImage nodeObject;
+    [SerializeField] RawImage nodeImage;
+    [SerializeField] RawImage nodeStroke;
+
     [SerializeField] Color passedColor;
     [SerializeField] Color openedColor;
     [SerializeField] Color closedColor;
+
+
 
     private void Awake()
     {
         if (techNode.technologyEntity.iconName != "")
         {
-            nodeObject.texture = (Texture2D)Resources.Load(techNode.technologyEntity.iconName);
+            nodeStroke.texture = (Texture2D)Resources.Load(techNode.technologyEntity.iconName);
         }
     }
 
     // Функция изучения
     public void SetLearned()
     {
-        nodeObject.color = passedColor;
+        nodeStroke.color = passedColor;
     }
 
     // Функция открытия
     public void SetOpened()
     {
-        nodeObject.color = openedColor;
+        nodeStroke.color = openedColor;
     }
 
     // Функция закрытия
     public void SetClosed()
     {
-        nodeObject.color = closedColor;
+        nodeStroke.color = closedColor;
     }
 
     // Функция отслеживания нажатия
@@ -46,14 +50,14 @@ public class TechnologyNodeVisualController : MonoBehaviour, IPointerClickHandle
         if (Input.GetMouseButtonUp(0))
         {
             Vector2 buttonLocalPoint;
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(nodeObject.rectTransform, Camera.main.WorldToScreenPoint(Input.mousePosition), null, out buttonLocalPoint);
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(nodeStroke.rectTransform, Camera.main.WorldToScreenPoint(Input.mousePosition), null, out buttonLocalPoint);
 
-            float wS = (nodeObject.texture.width / nodeObject.GetComponent<RectTransform>().rect.width);
-            float hS = (nodeObject.texture.height / nodeObject.GetComponent<RectTransform>().rect.height);
-            int xPos = (int)(((eventData.pressPosition.x - Camera.main.WorldToScreenPoint(nodeObject.transform.position).x) + (nodeObject.GetComponent<RectTransform>().rect.width / 2)) * wS);
-            int yPos = (int)(((eventData.pressPosition.y - Camera.main.WorldToScreenPoint(nodeObject.transform.position).y) + (nodeObject.GetComponent<RectTransform>().rect.height / 2)) * hS);
+            float wS = (nodeStroke.texture.width / nodeStroke.GetComponent<RectTransform>().rect.width);
+            float hS = (nodeStroke.texture.height / nodeStroke.GetComponent<RectTransform>().rect.height);
+            int xPos = (int)(((eventData.pressPosition.x - Camera.main.WorldToScreenPoint(nodeStroke.transform.position).x) + (nodeStroke.GetComponent<RectTransform>().rect.width / 2)) * wS);
+            int yPos = (int)(((eventData.pressPosition.y - Camera.main.WorldToScreenPoint(nodeStroke.transform.position).y) + (nodeStroke.GetComponent<RectTransform>().rect.height / 2)) * hS);
 
-            Color32 col = (nodeObject.texture as Texture2D).GetPixel(xPos, yPos);
+            Color32 col = (nodeStroke.texture as Texture2D).GetPixel(xPos, yPos);
 
             if (col.a > 0)
             {

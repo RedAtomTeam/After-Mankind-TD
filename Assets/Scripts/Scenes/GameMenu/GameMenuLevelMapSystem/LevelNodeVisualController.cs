@@ -10,6 +10,8 @@ public class LevelNodeVisualController : MonoBehaviour, IPointerClickHandler
     [SerializeField] LevelMapNode levelMapNode;
 
     [SerializeField] RawImage nodeObject;
+    [SerializeField] RawImage nodeStroke;
+
     [SerializeField] Color passedColor;
     [SerializeField] Color openedColor;
     [SerializeField] Color closedColor;
@@ -17,19 +19,19 @@ public class LevelNodeVisualController : MonoBehaviour, IPointerClickHandler
     // Функция установки состояни Passed
     public void SetPassed()
     {
-        nodeObject.color = passedColor;
+        nodeStroke.color = passedColor;
     }
 
     // Функция установки состояни Opened
     public void SetOpened()
     {
-        nodeObject.color = openedColor;
+        nodeStroke.color = openedColor;
     }
 
     // Функция установки состояни Closed
     public void SetClosed()
     {
-        nodeObject.color = closedColor;
+        nodeStroke.color = closedColor;
     }
 
     // Функция обработки кликов

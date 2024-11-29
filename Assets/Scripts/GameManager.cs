@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     Level[] allLevelsEntities;
     Technology[] allTechnologiesEntities;
+    //Enemy[] allEnemies;
 
 
     public GameData playerGameData;
@@ -33,7 +34,9 @@ public class GameManager : MonoBehaviour
 
         allLevelsEntities = Resources.LoadAll<Level>("");
         allTechnologiesEntities = Resources.LoadAll<Technology>("");
+        //allEnemies = Resources.LoadAll<Enemy>("");
 
+        //playerGameData = new GameData(allLevelsEntities.Length, allTechnologiesEntities.Length, allEnemies.Length);
         playerGameData = new GameData(allLevelsEntities.Length, allTechnologiesEntities.Length);
 
 
@@ -48,6 +51,11 @@ public class GameManager : MonoBehaviour
             playerGameData.technologies[i].level = allTechnologiesEntities[i].level;
             playerGameData.technologies[i].status = allTechnologiesEntities[i].status;
         }
+        //for (int i = 0; i < allEnemies.Length; i++)
+        //{
+        //    playerGameData.enemies[i].ID = allEnemies[i].ID;
+        //    playerGameData.enemies[i].status = allEnemies[i].status;
+        //}
     }
 
     // Функция сохранения данных в файл
@@ -198,6 +206,13 @@ public class Flags
     public Dictionary<string, bool> flags;
 }
 
+//[System.Serializable]
+//public class EnemyData
+//{
+//    public int ID;
+//    public int status;
+//}
+
 // Класс данных об игре
 [System.Serializable]
 public class GameData
@@ -206,6 +221,7 @@ public class GameData
     public LevelData[] levels;
     public TechnologyData[] technologies;
     public Flags flags;
+    //public EnemyData[] enemies;
     public DateAndTimeData dateAndTimeData;
 
     public GameData(int levelsCount, int technologiesCount)
@@ -226,6 +242,13 @@ public class GameData
         }
 
         flags = new Flags();
+
+        //enemies = new EnemyData[enemiesCount];
+        //for (int i = 0; i < technologies.Length; i++)
+        //{
+        //    enemies[i] = new EnemyData();
+        //}
+
         dateAndTimeData = new DateAndTimeData();
     }
 }

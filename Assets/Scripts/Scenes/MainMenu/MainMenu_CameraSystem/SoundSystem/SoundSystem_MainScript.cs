@@ -34,4 +34,9 @@ public class SoundSystem_MainScript : MonoBehaviour
     {
         soundEffectsSystem.SetVolume();
     }
+
+    public void MakeButtonSound()
+    {
+        soundEffectsSystem.MakeButtonSound();
+    }
 }

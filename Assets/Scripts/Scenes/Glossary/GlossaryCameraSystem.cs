@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class GlossaryCameraSystem : MonoBehaviour
 {
-    [SerializeField] private SoundSystem_MainScript soundSystem; 
+    [SerializeField] private SoundSystem_MainScript soundSystem;
 
 
+    public void MakeButtonSound()
+    {
+        soundSystem.MakeButtonSound();
+    }
 }
