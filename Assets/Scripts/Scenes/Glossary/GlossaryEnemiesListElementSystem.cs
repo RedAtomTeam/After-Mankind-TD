@@ -15,7 +15,6 @@ public class GlossaryEnemiesListElementSystem : MonoBehaviour
     // Внутренние переменные
     [SerializeField] Texture2D backgroundSelected;
     [SerializeField] Texture2D backgroundDeselected;
-
     [SerializeField] RawImage image_RawImage_Obj;
     [SerializeField] RawImage backgroundImage_RawImage_Obj;
     [SerializeField] TextMeshProUGUI name_TMP_Obj;
@@ -40,6 +39,7 @@ public class GlossaryEnemiesListElementSystem : MonoBehaviour
         glossaryEnemiesList.SelectElement(gameObject.GetComponent<GlossaryEnemiesListElementSystem>());
     }
 
+    // Сделать не выбранным
     public void SetDeselected()
     {
         backgroundImage_RawImage_Obj.texture = backgroundDeselected;

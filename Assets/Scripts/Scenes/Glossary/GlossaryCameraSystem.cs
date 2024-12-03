@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class GlossaryCameraSystem : MonoBehaviour
 {
-    [SerializeField] private SoundSystem_MainScript soundSystem;
+    // Подсистемы
+    [SerializeField] SoundSystem_MainScript soundSystem;
 
-
+    // Функция звука для кнопки
     public void MakeButtonSound()
     {
         soundSystem.MakeButtonSound();

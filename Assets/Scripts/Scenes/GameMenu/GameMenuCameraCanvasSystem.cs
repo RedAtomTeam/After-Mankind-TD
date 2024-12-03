@@ -10,7 +10,7 @@ public class GameMenuCameraCanvasSystem : MonoBehaviour
     // Подсистемы
     [SerializeField] GameMenuInterfaceSystem gameMenuInterfaceSystem;
 
-
+    // Функция загрузки сцены
     public void LoadScene(string sceneName)
     {
         gameMenuController.LoadScene(sceneName);
@@ -28,6 +28,7 @@ public class GameMenuCameraCanvasSystem : MonoBehaviour
         gameMenuController.FullUpdateTechTree();
     }
 
+    // Функция обновления очков изучения
     public void UpdateLearnPoints(int points)
     {
         gameMenuInterfaceSystem.UpdateLearnPoints(points);

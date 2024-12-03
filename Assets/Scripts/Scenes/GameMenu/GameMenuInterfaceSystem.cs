@@ -14,7 +14,6 @@ public class GameMenuInterfaceSystem : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI learnPointTMP;
 
-
     public void LoadScene(string sceneName)
     {
         gameMenuCameraCanvasSystem.LoadScene(sceneName);

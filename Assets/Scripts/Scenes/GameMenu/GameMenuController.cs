@@ -13,21 +13,23 @@ public class GameMenuController : MonoBehaviour
     [SerializeField] GameMenuTechnologyTreeSystem technologyTreeSystem;
     [SerializeField] LoadingScreenSystem_MainScript loadingScreenSystem;
 
+    // Функция загрузки сцены
     public void LoadScene(string sceneName)
     {
         loadingScreenSystem.LoadScene(sceneName);
     }
 
+    // Функция ообновления очков изучения
     public void UpdateLearnPoints()
     {
         int points = gameManager.playerGameData.balanceData.Balance;
         cameraCanvasSystem.UpdateLearnPoints(points);
     }
 
+    // Функция инициализации.
     private void Start()
     {
         gameManager = GameManager.Instance;
-
         FullUpdateLevelMap();
         OpenMapTab();
         FullUpdateTechTree();
@@ -61,6 +63,7 @@ public class GameMenuController : MonoBehaviour
     // Функция обновления карты уровней
     public void FullUpdateLevelMap()
     {
+        print("Controller update start");
         levelsMapSystem.FullUpdateMap();
     }
 

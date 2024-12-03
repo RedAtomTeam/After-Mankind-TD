@@ -35,6 +35,7 @@ public class SoundSystem_MainScript : MonoBehaviour
         soundEffectsSystem.SetVolume();
     }
 
+    // Функция звука для кнопки
     public void MakeButtonSound()
     {
         soundEffectsSystem.MakeButtonSound();

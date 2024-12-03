@@ -16,7 +16,7 @@ public class LevelMapNode : MonoBehaviour
     public Level levelEntity;
     [SerializeField] int status;
 
-    private void Start()
+    private void Awake()
     {
         gameManager = GameManager.Instance;
     }
@@ -37,6 +37,12 @@ public class LevelMapNode : MonoBehaviour
     public void UpdateStatus()
     {
         int currentID = levelEntity.ID;
+
+        if (gameManager == null)
+        {
+            gameManager = GameManager.Instance;
+        }
+
         foreach (LevelData levelData in gameManager.playerGameData.levels) {
             if (levelData.ID == currentID) 
             {
@@ -44,7 +50,6 @@ public class LevelMapNode : MonoBehaviour
                 break;
             }
         }
-
         switch (status)
         {
             case 0:

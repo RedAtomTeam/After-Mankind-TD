@@ -17,7 +17,6 @@ public class TechnologyNodeVisualController : MonoBehaviour, IPointerClickHandle
     [SerializeField] Color closedColor;
 
 
-
     private void Awake()
     {
         if (techNode.technologyEntity.iconName != "")

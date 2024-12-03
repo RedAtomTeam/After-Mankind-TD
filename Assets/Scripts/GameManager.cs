@@ -9,17 +9,12 @@ using UnityEngine.Playables;
 public class GameManager : MonoBehaviour
 {
     // Менеджер игровых данных
-
     public static GameManager Instance; // Статическая переменная для доступа
-
     Level[] allLevelsEntities;
     Technology[] allTechnologiesEntities;
-    //Enemy[] allEnemies;
-
-
     public GameData playerGameData;
 
-
+    // При запуске загружаем список уровней и технологий. Так же заполняем данные об игроке.
     private void Awake()
     {
         if (Instance == null)
@@ -34,11 +29,7 @@ public class GameManager : MonoBehaviour
 
         allLevelsEntities = Resources.LoadAll<Level>("");
         allTechnologiesEntities = Resources.LoadAll<Technology>("");
-        //allEnemies = Resources.LoadAll<Enemy>("");
-
-        //playerGameData = new GameData(allLevelsEntities.Length, allTechnologiesEntities.Length, allEnemies.Length);
         playerGameData = new GameData(allLevelsEntities.Length, allTechnologiesEntities.Length);
-
 
         for (int i = 0; i < allLevelsEntities.Length; i++) 
         {
@@ -51,11 +42,6 @@ public class GameManager : MonoBehaviour
             playerGameData.technologies[i].level = allTechnologiesEntities[i].level;
             playerGameData.technologies[i].status = allTechnologiesEntities[i].status;
         }
-        //for (int i = 0; i < allEnemies.Length; i++)
-        //{
-        //    playerGameData.enemies[i].ID = allEnemies[i].ID;
-        //    playerGameData.enemies[i].status = allEnemies[i].status;
-        //}
     }
 
     // Функция сохранения данных в файл
@@ -99,7 +85,6 @@ public class GameManager : MonoBehaviour
         foreach (TechnologyData technology in playerGameData.technologies)
         {
             int minPrev = 3;
-
             foreach (Technology techEnt in allTechnologiesEntities)
             {
                 if (techEnt.ID == technology.ID)
@@ -114,10 +99,8 @@ public class GameManager : MonoBehaviour
                             }
                         }
                     }
-
                     minPrev -= 1; 
                     minPrev = minPrev < technology.status ? technology.status : minPrev;
-
                     technology.status = minPrev;
 
                 }
@@ -206,13 +189,6 @@ public class Flags
     public Dictionary<string, bool> flags;
 }
 
-//[System.Serializable]
-//public class EnemyData
-//{
-//    public int ID;
-//    public int status;
-//}
-
 // Класс данных об игре
 [System.Serializable]
 public class GameData
@@ -221,7 +197,6 @@ public class GameData
     public LevelData[] levels;
     public TechnologyData[] technologies;
     public Flags flags;
-    //public EnemyData[] enemies;
     public DateAndTimeData dateAndTimeData;
 
     public GameData(int levelsCount, int technologiesCount)
@@ -242,12 +217,6 @@ public class GameData
         }
 
         flags = new Flags();
-
-        //enemies = new EnemyData[enemiesCount];
-        //for (int i = 0; i < technologies.Length; i++)
-        //{
-        //    enemies[i] = new EnemyData();
-        //}
 
         dateAndTimeData = new DateAndTimeData();
     }

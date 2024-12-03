@@ -29,8 +29,7 @@ public class GameMenuCameraSystem : MonoBehaviour
 
     public float wheelSense;
 
-    // Функция для переключения между картами для камеры
-
+    // Функция для переключения на технологии
     public void ChooseSpriteRendererTech()
     {
         mapRenderer = technologiesTabRenderer;
@@ -44,6 +43,7 @@ public class GameMenuCameraSystem : MonoBehaviour
         mapMaxY = mapRenderer.transform.position.y + mapRenderer.bounds.size.y / 2f;
     }
 
+    // Функция для переключения на карту
     public void ChooseSpriteRendererMap()
     {
         mapRenderer = worldMapTabRenderer;
@@ -134,9 +134,6 @@ public class GameMenuCameraSystem : MonoBehaviour
 
         float newX = Mathf.Clamp(targetPosition.x, minX, maxX);
         float newY = Mathf.Clamp(targetPosition.y, minY, maxY);
-
-        print("newX" + newX.ToString());
-        print("newY" + newY.ToString());
 
         return new Vector3(newX, newY, targetPosition.z);
     }

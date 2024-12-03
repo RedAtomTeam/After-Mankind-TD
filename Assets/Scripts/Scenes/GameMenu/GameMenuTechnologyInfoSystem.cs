@@ -240,13 +240,10 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
         {
             if (targetTech.ID == technology.ID)
             {
-                print(targetTech.ID);
                 if (technology.status == 1)
                 {
                     if (targetTech.openCost <= gameManager.playerGameData.balanceData.Balance)
                     {
-                        
-                        print(targetTech.ID);
                         gameManager.playerGameData.balanceData.Balance -= targetTech.openCost;
 
                         technology.status = 2;
@@ -256,9 +253,6 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
                         interfaceSystem.FullUpdateTechTree();
                         LoadTechInfo(targetTech);
                         interfaceSystem.UpdateLearnPoints(gameManager.playerGameData.balanceData.Balance);
-
-
-
                     }
                 }
                 else

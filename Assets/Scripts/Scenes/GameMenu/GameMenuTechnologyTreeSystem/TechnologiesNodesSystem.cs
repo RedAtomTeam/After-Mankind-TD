@@ -7,7 +7,7 @@ public class TechnologiesNodesSystem : MonoBehaviour
     // Надсистемы
     [SerializeField] GameMenuTechnologyTreeSystem gameMenuTechnologyTreeSystem;
 
-
+    // Список нод технологий
     [SerializeField] List<TechnologyNode> techNodesList;
 
     // Функция обновления всех нод

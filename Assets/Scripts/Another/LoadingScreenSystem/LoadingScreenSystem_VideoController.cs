@@ -8,7 +8,6 @@ public class LoadingScreenSystem_VideoController : MonoBehaviour
 {
     [SerializeField] List<VideoClip> videoClips = new List<VideoClip>();    // Список видеоклипов.
     [SerializeField] VideoPlayer videoPlayer;                               // Видеоплеер.
-
     int currentVideo;   // Указатель на нынешнее видео.
 
     // Функция запуска работы по выводу видео.

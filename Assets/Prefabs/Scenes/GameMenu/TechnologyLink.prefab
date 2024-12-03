@@ -103,10 +103,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   technologiesLinksSystem: {fileID: 0}
+  visualController: {fileID: 885011712031841267}
   status: 0
   lineImage: {fileID: 1554837957230672716}
   lineWidth: 0.1
-  visualController: {fileID: 885011712031841267}
   techEntityPrevs: []
   techEntityNext: []
   pointA: {fileID: 0}

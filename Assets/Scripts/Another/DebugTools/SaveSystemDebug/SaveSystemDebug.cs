@@ -6,22 +6,20 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 public class SaveSystemDebug : MonoBehaviour
-{
-    [SerializeField] private Canvas saveSystemDebugCanvas;
-    [SerializeField] private GameObject dataPrefab;
-    [SerializeField] private TMP_InputField inputField;
-    [SerializeField] private Button button;
+{   
+    [SerializeField] private Canvas saveSystemDebugCanvas;      // Ссылка на канвас
+    [SerializeField] private GameObject dataPrefab;             // Ссылка на префаб данных
+    [SerializeField] private TMP_InputField inputField;         // Ссылка на поле ввода
+    [SerializeField] private Button button;                     // Ссылка на кнопку запуска команды
+    [SerializeField] private GameObject balanceObj;             // Ссылка на объект баланса
+    [SerializeField] private List<GameObject> levelsData;       // Список объектов данных об уровнях
+    [SerializeField] private List<GameObject> technologiesData; // Список объектов данных о тхнологиях
 
+    private GameManager gameManager;    // Ссылка на игровой менеджер
 
-    [SerializeField] private GameObject balanceObj;
-    [SerializeField] private List<GameObject> levelsData;
-    [SerializeField] private List<GameObject> technologiesData;
+    private int startX = -800, startY = 550;    // Стартовые точки для спавна объектов данных
 
-    private GameManager gameManager;
-
-    private int startX = -800, startY = 550;
-
-    // Start is called before the first frame update
+    // На старте инициализируем ссылку на менеджер и создаём объекты данных неа канфасе для демонстарции данных из менеджера игры
     void Start()
     {
         gameManager = GameManager.Instance;
@@ -60,12 +58,10 @@ public class SaveSystemDebug : MonoBehaviour
                 startY = 550;
                 startX += 250;
             }
-
         }
-
     }
 
-    // Update is called once per frame
+    // Каждый кадр обновляем данные на канвасе
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -76,7 +72,6 @@ public class SaveSystemDebug : MonoBehaviour
         for (int i = 0; i < levelsData.Count; i++)
         {
             int levelID = Convert.ToInt32(levelsData[i].GetComponent<TextMeshProUGUI>().text.ToString().Split("_")[0]);
-            //print(levelID);
             int actualLevelStatus = -1;
 
             for (int j = 0; j < gameManager.playerGameData.levels.Length; j++)
@@ -107,7 +102,7 @@ public class SaveSystemDebug : MonoBehaviour
         }
     }
 
-
+    // Функция запуска команды
     public void RunCommand()
     {
         string fullCommand = inputField.text;
@@ -119,14 +114,10 @@ public class SaveSystemDebug : MonoBehaviour
         {
             if (opperands[0] == "SetTechStatus")
             {
-                //print("Start Sommant SetTechStatus");
                 if (opperands.Length > 2)
                 {
-                    //print("Operand count test success");
                     for (int i = 0; i < gameManager.playerGameData.technologies.Length; i++)
                     {
-                        //print(gameManager.playerGameData.technologies[i].ID.ToString()+"|-|"+opperands[1]);
-
                         if (gameManager.playerGameData.technologies[i].ID.ToString() == opperands[1])
                         {
                             gameManager.playerGameData.technologies[i].status = Convert.ToInt32(opperands[2]);
@@ -151,14 +142,10 @@ public class SaveSystemDebug : MonoBehaviour
             }
             if (opperands[0] == "SetTechLevel")
             {
-                //print("Start Sommant SetTechStatus");
                 if (opperands.Length > 2)
                 {
-                    //print("Operand count test success");
                     for (int i = 0; i < gameManager.playerGameData.technologies.Length; i++)
                     {
-                        //print(gameManager.playerGameData.technologies[i].ID.ToString()+"|-|"+opperands[1]);
-
                         if (gameManager.playerGameData.technologies[i].ID.ToString() == opperands[1])
                         {
                             gameManager.playerGameData.technologies[i].level = Convert.ToInt32(opperands[2]);

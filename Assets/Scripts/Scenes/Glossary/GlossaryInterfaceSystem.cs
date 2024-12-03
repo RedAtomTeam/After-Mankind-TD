@@ -23,6 +23,7 @@ public class GlossaryInterfaceSystem : MonoBehaviour
         controller.LoadScene(sceneName);
     }
 
+    // Функция для вызова звука у кнопки
     public void MakeButtonSound()
     {
         controller.MakeButtonSound();

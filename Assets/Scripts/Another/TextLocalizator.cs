@@ -5,22 +5,28 @@ using UnityEngine;
 
 public class TextLocalisator : MonoBehaviour
 {
+    // Ссылка на объект текста, который будет меняться в зависимости от выбранного языка.
     [SerializeField] private TextMeshProUGUI textObj;
 
+    // Русский текст.
     [SerializeField] private string textRu;
+    
+    // Английский текст.
     [SerializeField] private string textEng;
 
     private void Start()
     {
-        textObj = GetComponent<TextMeshProUGUI>();
+        // Если объект не присвоен пользователем, то он будет автоматически найден на объекте.
+        if (textObj == null)
+        {
+            textObj = GetComponent<TextMeshProUGUI>();
+        }
     }
 
-    // Update is called once per frame
+    // Функция обновления текста.
     void Update()
     {
-        //print(PlayerPrefs.GetString("Language"));
         string lang = PlayerPrefs.GetString("Language", "Русский");
-
         switch (lang)
         {
             case "Русский":

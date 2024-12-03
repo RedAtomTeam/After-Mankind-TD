@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GlossaryEnemyInfoParametrsSystem : MonoBehaviour
 {
+    // Ссылки на текстовые объекты
     [SerializeField] TextMeshProUGUI Type_ValueTMP_Obj;
     [SerializeField] TextMeshProUGUI HealthPoint_ValueTMP_Obj;
     [SerializeField] TextMeshProUGUI Kinetic_ValueTMP_Obj;
@@ -14,6 +15,7 @@ public class GlossaryEnemyInfoParametrsSystem : MonoBehaviour
     [SerializeField] TextMeshProUGUI Damage_ValueTMP_Obj;
     [SerializeField] TextMeshProUGUI Treat_ValueTMP_Obj;
 
+    // Функция установки параметров
     public void SetEnemiesParametrs(Enemy enemySO)
     {
         string type = "Error";

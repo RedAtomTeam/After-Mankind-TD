@@ -126,12 +126,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelsLinksSystem: {fileID: 0}
+  visualController: {fileID: 8572113553394797113}
   firstLevelNode: {fileID: 0}
   secondLevelNode: {fileID: 0}
   status: 0
   lineImage: {fileID: 0}
-  lineWidth: 0.01
-  visualController: {fileID: 8572113553394797113}
+  lineWidth: 0.005
 --- !u!114 &8572113553394797113
 MonoBehaviour:
   m_ObjectHideFlags: 0

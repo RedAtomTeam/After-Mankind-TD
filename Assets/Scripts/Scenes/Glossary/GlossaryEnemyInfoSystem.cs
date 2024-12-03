@@ -19,9 +19,6 @@ public class GlossaryEnemyInfoSystem : MonoBehaviour
     // Функция установки информации о противнике в окно информации о противнике
     public void SetInfoAboutEnemy(Enemy EnemySO)
     {
-        //print("Start set");
-        //print("Sprites\\"+EnemySO.backgroundImageName);
-        //print((Texture)Resources.Load("Sprites\\"+EnemySO.backgroundImageName));
         backgroundImage_RawImage_Obj.texture = (Texture) Resources.Load("Sprites\\"+EnemySO.backgroundImageName);
         switch (PlayerPrefs.GetString("Language"))
         {

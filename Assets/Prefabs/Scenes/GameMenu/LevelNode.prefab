@@ -69,6 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelMapNode: {fileID: 3807553068741345227}
   nodeObject: {fileID: 7716300423827297757}
+  nodeStroke: {fileID: 8779447673557787168}
   passedColor: {r: 0.7924528, g: 0.31025273, b: 0.31025273, a: 1}
   openedColor: {r: 0.735849, g: 0.40610537, b: 0.40610537, a: 1}
   closedColor: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
@@ -176,10 +177,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2547573998538389126}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7948572972377035561
 CanvasRenderer:

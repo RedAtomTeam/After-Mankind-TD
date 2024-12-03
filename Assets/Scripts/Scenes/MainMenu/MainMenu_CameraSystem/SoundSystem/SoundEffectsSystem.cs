@@ -31,6 +31,7 @@ public class SoundEffectsSystem : MonoBehaviour
         }
     }
 
+    // Функция звука для кнопки
     public void MakeButtonSound()
     {
         transform.GetChild(0).GetComponent<AudioSource>().Play();
