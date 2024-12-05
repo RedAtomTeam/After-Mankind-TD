@@ -45,7 +45,7 @@ public class GameMenuSavesSystem : MonoBehaviour
             DestroyImmediate(content.transform.GetChild(0).gameObject);
         }
 
-        string saveFilePath = Application.persistentDataPath;
+        string saveFilePath = Application.persistentDataPath + "\\" + "saves";
 
         if (Directory.Exists(saveFilePath))
         {
@@ -96,7 +96,7 @@ public class GameMenuSavesSystem : MonoBehaviour
     // Функция сохранения
     public bool SaveSave()
     {
-        string saveFilePath = Application.persistentDataPath;
+        string saveFilePath = Application.persistentDataPath + "\\" + "saves";
 
         string saveFileName = inputField.text;
 

@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         playerGameData.dateAndTimeData.minutes = dataEndTimeNow.Minute;
         playerGameData.dateAndTimeData.hours = dataEndTimeNow.Hour;
 
-        string saveFilePath = Application.persistentDataPath + "\\" + fileName;
+        string saveFilePath = Application.persistentDataPath + "\\" + "saves" + "\\" + fileName;
         BinaryFormatter formatter = new BinaryFormatter();
         using (FileStream stream = new FileStream(saveFilePath, FileMode.Create))
         {
@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     // Функция загрузки данных из файла
     public void LoadGame(string fileName)
     {
-        string saveFilePath = Application.persistentDataPath + "\\" + fileName;
+        string saveFilePath = Application.persistentDataPath + "\\" + "saves" + "\\" + fileName;
         if (File.Exists(saveFilePath))
         {
             BinaryFormatter formatter = new BinaryFormatter();

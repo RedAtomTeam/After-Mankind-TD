@@ -32,6 +32,7 @@ public class SoundtracksSystem : MonoBehaviour
     // Отслеживаем проигрывание треков и меняем на следующие.
     private void Update()
     {
+        print(!audioSource.isPlaying);
         if (!audioSource.isPlaying)
         {
             audioSource.clip = trackList[currentTrack];

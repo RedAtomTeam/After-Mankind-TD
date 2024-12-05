@@ -19,19 +19,19 @@ public class LevelNodeVisualController : MonoBehaviour, IPointerClickHandler
     // Функция установки состояни Passed
     public void SetPassed()
     {
-        nodeStroke.color = passedColor;
+        nodeObject.color = passedColor;
     }
 
     // Функция установки состояни Opened
     public void SetOpened()
     {
-        nodeStroke.color = openedColor;
+        nodeObject.color = openedColor;
     }
 
     // Функция установки состояни Closed
     public void SetClosed()
     {
-        nodeStroke.color = closedColor;
+        nodeObject.color = closedColor;
     }
 
     // Функция обработки кликов
@@ -44,10 +44,30 @@ public class LevelNodeVisualController : MonoBehaviour, IPointerClickHandler
 
             float wS = (nodeObject.texture.width / nodeObject.GetComponent<RectTransform>().rect.width);
             float hS = (nodeObject.texture.height / nodeObject.GetComponent<RectTransform>().rect.height);
-            int xPos = (int)(((eventData.pressPosition.x - Camera.main.WorldToScreenPoint(nodeObject.transform.position).x) + (nodeObject.GetComponent<RectTransform>().rect.width / 2)) * wS);
-            int yPos = (int)(((eventData.pressPosition.y - Camera.main.WorldToScreenPoint(nodeObject.transform.position).y) + (nodeObject.GetComponent<RectTransform>().rect.height / 2)) * hS);
 
-            Color32 col = (nodeObject.texture as Texture2D).GetPixel(xPos, yPos);
+
+            float diffX = (eventData.pressPosition.x - Camera.main.WorldToScreenPoint(nodeObject.transform.position).x);
+            float diffY = (eventData.pressPosition.y - Camera.main.WorldToScreenPoint(nodeObject.transform.position).y);
+            print($"DIFFERENT: {diffX}-{diffY}");
+
+            Vector2 sizeInUnits = nodeObject.rectTransform.localScale;
+
+            // Получаем количество пикселей на юнит через orthographicSize
+            float pixelsPerUnit = Screen.height / (2f * Camera.main.orthographicSize);
+
+            float widthInPixels = sizeInUnits.x * pixelsPerUnit;
+            float heightInPixels = sizeInUnits.y * pixelsPerUnit;
+
+            float percentX = (diffX + (widthInPixels / 2)) / widthInPixels;
+            float percentY = (diffY + (heightInPixels / 2)) / heightInPixels;
+
+            print(percentX);
+            print(percentY);
+
+            int CorX = (int)(percentX * nodeObject.texture.width);
+            int CorY = (int)(percentY * nodeObject.texture.height);
+
+            Color32 col = (nodeObject.texture as Texture2D).GetPixel(CorX, CorY);
 
             if (col.a > 0)
             {

@@ -175,9 +175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae586a27ff616ad45a9dc4093efc789e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   techNode: {fileID: 3012266137039658343}
-  nodeObject: {fileID: 8678646930602620522}
-  nodeStroke: {fileID: 0}
+  nodeImage: {fileID: 2398666316677926175}
+  nodeStroke: {fileID: 8678646930602620522}
   passedColor: {r: 0.83137256, g: 0.3019608, b: 0.3019608, a: 1}
   openedColor: {r: 0.7921569, g: 0.53333336, b: 0.53333336, a: 1}
   closedColor: {r: 0, g: 0, b: 0, a: 1}

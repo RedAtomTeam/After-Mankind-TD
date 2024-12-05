@@ -49,7 +49,7 @@ public class SavesSystem_MainScript : MonoBehaviour
         }
         savesNames.Clear();
 
-        string saveFilePath = Application.persistentDataPath;
+        string saveFilePath = Application.persistentDataPath + "\\" + "saves";
 
         if (Directory.Exists(saveFilePath))
         {
@@ -59,6 +59,7 @@ public class SavesSystem_MainScript : MonoBehaviour
             var files = info.GetFiles();
             foreach (var file in files)
             {
+                print(saveFilePath);
                 print(file.Name);
 
                 //Создаём элемент списка.
@@ -69,6 +70,7 @@ public class SavesSystem_MainScript : MonoBehaviour
                 saveEl.transform.SetParent(content.transform, false);
 
                 GameData gameData;
+                
                 BinaryFormatter formatter = new BinaryFormatter();
                 using (FileStream stream = new FileStream(file.FullName, FileMode.Open))
                 {
@@ -92,7 +94,7 @@ public class SavesSystem_MainScript : MonoBehaviour
     // Функция удаления выбранного сохранения.
     public void DelSave()
     {
-        string saveName = Application.persistentDataPath + "\\" + currentSave.Name;
+        string saveName = Application.persistentDataPath + "\\" + "saves" + "\\" + currentSave.Name;
 
         if (File.Exists(saveName))
         {
