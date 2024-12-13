@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour
     // При запуске загружаем список уровней и технологий. Так же заполняем данные об игроке.
     private void Awake()
     {
+        Initialized();
+    }
+
+    public void Initialized()
+    {
         if (Instance == null)
         {
             Instance = this; // Сохраняем единственный экземпляр
@@ -31,7 +36,7 @@ public class GameManager : MonoBehaviour
         allTechnologiesEntities = Resources.LoadAll<Technology>("");
         playerGameData = new GameData(allLevelsEntities.Length, allTechnologiesEntities.Length);
 
-        for (int i = 0; i < allLevelsEntities.Length; i++) 
+        for (int i = 0; i < allLevelsEntities.Length; i++)
         {
             playerGameData.levels[i].ID = allLevelsEntities[i].ID;
             playerGameData.levels[i].status = allLevelsEntities[i].status;

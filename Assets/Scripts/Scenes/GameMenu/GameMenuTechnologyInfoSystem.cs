@@ -157,10 +157,10 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
             techValueTargetType.color = tech.type == "Ballistic Computer" ? activeColor : passiveColor;
             techValueGunCount.color = tech.type == "Corps" ? activeColor : passiveColor;
 
-            techLabelMass.color = tech.type == "Platform" ? activeColor : passiveColor;
-            techLabelMaxMass.color = tech.type == "Corps" ? activeColor : passiveColor;
+            techLabelMass.color = (tech.type == "Platform" || tech.type == "Corps" || tech.type == "Weapon") ? activeColor : passiveColor;
+            techLabelMaxMass.color = (tech.type == "Platform" || tech.type == "Corps") ? activeColor : passiveColor;
             techLabelHorizontalSpeed.color = tech.type == "Platform" ? activeColor : passiveColor;
-            techLabelVerticalSpeed.color = tech.type == "Platform" ? activeColor : passiveColor;
+            techLabelVerticalSpeed.color = tech.type == "Corps" ? activeColor : passiveColor;
             techLabelEnergy.color = activeColor;
             techLabelRadius.color = tech.type == "Ballistic Computer" ? activeColor : passiveColor;
             techLabelDamage.color = tech.type == "Weapon" ? activeColor : passiveColor;
@@ -168,6 +168,18 @@ public class GameMenuTechnologyInfoSystem : MonoBehaviour
             techLabelReload.color = tech.type == "Weapon" ? activeColor : passiveColor;
             techLabelTargetType.color = tech.type == "Ballistic Computer" ? activeColor : passiveColor;
             techLabelGunCount.color = tech.type == "Corps" ? activeColor : passiveColor;
+
+            //techLabelMass.color = tech.type == "Platform" ? activeColor : passiveColor;
+            //techLabelMaxMass.color = tech.type == "Corps" ? activeColor : passiveColor;
+            //techLabelHorizontalSpeed.color = tech.type == "Platform" ? activeColor : passiveColor;
+            //techLabelVerticalSpeed.color = tech.type == "Platform" ? activeColor : passiveColor;
+            //techLabelEnergy.color = activeColor;
+            //techLabelRadius.color = tech.type == "Ballistic Computer" ? activeColor : passiveColor;
+            //techLabelDamage.color = tech.type == "Weapon" ? activeColor : passiveColor;
+            //techLabelDamageType.color = tech.type == "Weapon" ? activeColor : passiveColor;
+            //techLabelReload.color = tech.type == "Weapon" ? activeColor : passiveColor;
+            //techLabelTargetType.color = tech.type == "Ballistic Computer" ? activeColor : passiveColor;
+            //techLabelGunCount.color = tech.type == "Corps" ? activeColor : passiveColor;
 
             switch (tech.type)
             {
